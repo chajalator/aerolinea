@@ -1,2 +1,119 @@
-esto es prueba
-gatos payasos
+namespace Aerolinea
+{
+public partial class frmcontrolPasajero : Form
+{
+public frmcontrolPasajero()
+{
+InitializeComponent();
+}
+
+private void btnMenu_Click(object sender, EventArgs e)
+{
+Menu mn = new Menu();
+mn.Show();
+this.Hide();
+}
+
+private void ingresoPasajero_Load(object sender, EventArgs e)
+{
+funconsultarPasajeros();
+
+}
+
+private void funconsul	tarPasajeros()
+{
+using (clasconexion.funobtenerConexion())
+{
+string squery = "SELECT cod_pasajero as CodigoPasajero,nom_pasajero as NombrePasajero,ape_pasajero as ApellidoPasajero,direccion as DireccionPasajero,telefono as Telefono1,telefono2 as Telefono2 ,correo_pasajero as Correo1,correo_pasajero2 as Correo2,edad_pasajero as EdadPasajero,no_pasaporte as PasaportePasajero,estado as EstadoPasajero FROM aerolinea.pasajero where estado='ACTIVO'";
+MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
+DataTable dtDatos = new DataTable();
+MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
+mdaDatos.Fill(dtDatos);
+grdPasajeros.DataSource = dtDatos;
+clasconexion.funobtenerConexion().Close();
+}
+}
+
+private void btnGuardarPasajero_Click(object sender, EventArgs e)
+{
+try
+{
+
+int ifilas;
+int icodigoPasajero;
+using (clasconexion.funobtenerConexion())
+{
+string squery = "SELECT COUNT(*) As Cant FROM aerolinea.pasajero";
+MySqlCommand cmd = new MySqlCommand(squery, clasconexion.funobtenerConexion());
+ifilas = Convert.ToInt32(cmd.ExecuteScalar());
+icodigoPasajero = ifilas + 1;
+clasconexion.funobtenerConexion().Close();
+
+
+}
+using (clasconexion.funobtenerConexion())
+{
+string sinsertarPasajero = "INSERT INTO aerolinea.pasajero (cod_pasajero,nom_pasajero,ape_pasajero,direccion,telefono,telefono2,correo_pasajero,correo_pasajero2,edad_pasajero,no_pasaporte,estado)values(" + icodigoPasajero + ",'" + txtNomPasajero.Text + "','" + txtApellidoPasajero.Text + "','" + txtDireccionPasajero.Text + "','" + txtTelefonoPasajero1.Text + "','" + txtTelefonoPasajero2.Text + "','" + txtCorreoPasajero1.Text + "','" + txtCorreoPasajero2.Text + "'," + txtEdadPasajero.Text + "," + txtNoPasaporte.Text + ",'" + "ACTIVO" + "')";
+MySqlCommand cmd2 = new MySqlCommand(sinsertarPasajero, clasconexion.funobtenerConexion());
+MySqlDataReader MyReader;
+MyReader = cmd2.ExecuteReader();
+MessageBox.Show("PASAJERO ALMACENADO");
+clasconexion.funobtenerConexion().Close();
+funlimpiar();
+funconsultarPasajeros();
+}
+
+}
+catch (Exception ex)
+{
+MessageBox.Show(ex.Message);
+}
+}
+
+private void funlimpiar()
+{
+txtNomPasajero.Text = "";
+txtApellidoPasajero.Text = "";
+txtCorreoPasajero1.Text = "";
+txtCorreoPasajero2.Text = "";
+txtDireccionPasajero.Text = "";
+txtEdadPasajero.Text = "";
+txtNoPasaporte.Text = "";
+txtTelefonoPasajero1.Text = "";
+txtTelefonoPasajero2.Text = "";
+
+}
+
+private void btnBuscarPasajero_Click(object sender, EventArgs e)
+{
+funbuscarPasajero();
+}
+
+private void funbuscarPasajero()
+{
+
+using (clasconexion.funobtenerConexion())
+{
+
+string squeryBuscarPasajero = "SELECT cod_pasajero as CodigoPasajero,nom_pasajero as NombrePasajero,ape_pasajero as ApellidoPasajero,direccion as DireccionPasajero,telefono as Telefono1,telefono2 as Telefono2 ,correo_pasajero as Correo1,correo_pasajero2 as Correo2,edad_pasajero as EdadPasajero,no_pasaporte as PasaportePasajero,estado as EstadoPasajero FROM aerolinea.pasajero where no_pasaporte =" + txtBusquedaPasajero.Text + " or cod_pasajero =" + txtBusquedaPasajero.Text ;
+MySqlCommand cmdc = new MySqlCommand(squeryBuscarPasajero, clasconexion.funobtenerConexion());
+DataTable dtDat = new DataTable();
+MySqlDataAdapter mdaDat = new MySqlDataAdapter(squeryBuscarPasajero, clasconexion.funobtenerConexion());
+mdaDat.Fill(dtDat);
+grdPasajeros.DataSource = dtDat;
+clasconexion.funobtenerConexion().Close();
+
+}
+}
+
+private void btnEliminarPasajero_Click(object sender, EventArgs e)
+{
+funeliminarPasajero();
+}
+
+private void funeliminarPasajero()
+{
+
+}
+}
+}
