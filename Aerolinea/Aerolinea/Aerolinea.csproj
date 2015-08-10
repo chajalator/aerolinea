@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,12 +51,7 @@
     <Compile Include="agregarVuelo.Designer.cs">
       <DependentUpon>agregarVuelo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </Compile>
+    <Compile Include="clasconexion.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,17 +78,14 @@
     <Compile Include="realizacionPago.Designer.cs">
       <DependentUpon>realizacionPago.cs</DependentUpon>
     </Compile>
-    <Compile Include="ingresoPasajero.cs">
+    <Compile Include="frmcontrolPasajero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ingresoPasajero.Designer.cs">
-      <DependentUpon>ingresoPasajero.cs</DependentUpon>
+    <Compile Include="frmcontrolPasajero.Designer.cs">
+      <DependentUpon>frmcontrolPasajero.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="agregarVuelo.resx">
       <DependentUpon>agregarVuelo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ingresoReservacion.resx">
       <DependentUpon>ingresoReservacion.cs</DependentUpon>
@@ -111,8 +104,8 @@
     <EmbeddedResource Include="realizacionPago.resx">
       <DependentUpon>realizacionPago.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ingresoPasajero.resx">
-      <DependentUpon>ingresoPasajero.cs</DependentUpon>
+    <EmbeddedResource Include="frmcontrolPasajero.resx">
+      <DependentUpon>frmcontrolPasajero.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -266,6 +259,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pagos.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu principal.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

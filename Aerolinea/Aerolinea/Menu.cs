@@ -24,9 +24,7 @@ namespace Aerolinea
 
         private void registroToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            ingresoReservacion ires = new ingresoReservacion();
-            ires.Show();
-            this.Hide();
+           
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -36,26 +34,26 @@ namespace Aerolinea
 
         private void rESERVACIONESToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ingresoReservacion ires = new ingresoReservacion();
+            ires.Show();
+            this.Hide();
         }
 
         private void registroToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            agregarVuelo avuelo = new agregarVuelo();
-            avuelo.Show();
-            this.Hide();
+           
         }
 
         private void pASAJEROSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frmcontrolPasajero ipasaj = new frmcontrolPasajero();
+            ipasaj.Show();
+            this.Hide();
         }
 
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ingresoPasajero ipasaj = new ingresoPasajero();
-            ipasaj.Show();
-            this.Hide();
+            
             
         }
 
@@ -86,10 +84,11 @@ namespace Aerolinea
 
         }
 
-        private void aYUDAToolStripMenuItem_Click(object sender, EventArgs e)
+        private void vUELOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 fm3 = new Form3();
-            fm3.Show();
+            agregarVuelo avuelo = new agregarVuelo();
+            avuelo.Show();
+            this.Hide();
         }
     }
 }
