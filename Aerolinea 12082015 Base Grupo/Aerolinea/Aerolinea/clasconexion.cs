@@ -10,7 +10,7 @@ namespace Aerolinea
     public class clasconexion
     {
         public static MySqlConnection funobtenerConexion() {
-            MySqlConnection conectar = new MySqlConnection("server=localhost;user=root;Password=negritalinda;database =aerolinea");
+            MySqlConnection conectar = new MySqlConnection("server=localhost;user=root;Password=;database =guatemalairlines");
             conectar.Open();
             return conectar;
         }
