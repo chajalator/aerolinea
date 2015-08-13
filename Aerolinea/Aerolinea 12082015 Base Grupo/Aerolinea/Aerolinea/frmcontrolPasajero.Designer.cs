@@ -31,20 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcontrolPasajero));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.txtnoPasaporte = new System.Windows.Forms.MaskedTextBox();
+            this.txtEdadPasajero = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefonoPasajero = new System.Windows.Forms.MaskedTextBox();
+            this.lstCorreoPasajero = new System.Windows.Forms.ListBox();
+            this.lstTelefonoPasajero = new System.Windows.Forms.ListBox();
             this.dtpasajero = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.txtdpiPasajero = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtTelefonoPasajero2 = new System.Windows.Forms.TextBox();
-            this.txtCorreoPasajero2 = new System.Windows.Forms.TextBox();
-            this.txtnoPasaporte = new System.Windows.Forms.TextBox();
-            this.txtEdadPasajero = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtCorreoPasajero1 = new System.Windows.Forms.TextBox();
+            this.txtCorreoPasajero = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtTelefonoPasajero1 = new System.Windows.Forms.TextBox();
             this.txtDireccionPasajero = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtApellidoPasajero = new System.Windows.Forms.TextBox();
@@ -58,6 +60,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.grdPasajeros = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cmbcodPasajero = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.grdcorreoPasajero = new System.Windows.Forms.DataGridView();
             this.grdtelefonoPasajero = new System.Windows.Forms.DataGridView();
@@ -72,7 +75,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtcodPasajero = new System.Windows.Forms.TextBox();
+            this.btnrefrescarBd = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -97,21 +100,23 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnAceptar);
+            this.groupBox1.Controls.Add(this.txtnoPasaporte);
+            this.groupBox1.Controls.Add(this.txtEdadPasajero);
+            this.groupBox1.Controls.Add(this.txtTelefonoPasajero);
+            this.groupBox1.Controls.Add(this.lstCorreoPasajero);
+            this.groupBox1.Controls.Add(this.lstTelefonoPasajero);
             this.groupBox1.Controls.Add(this.dtpasajero);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtdpiPasajero);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtTelefonoPasajero2);
-            this.groupBox1.Controls.Add(this.txtCorreoPasajero2);
-            this.groupBox1.Controls.Add(this.txtnoPasaporte);
-            this.groupBox1.Controls.Add(this.txtEdadPasajero);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtCorreoPasajero1);
+            this.groupBox1.Controls.Add(this.txtCorreoPasajero);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtTelefonoPasajero1);
             this.groupBox1.Controls.Add(this.txtDireccionPasajero);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtApellidoPasajero);
@@ -120,26 +125,86 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(16, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(694, 215);
+            this.groupBox1.Size = new System.Drawing.Size(722, 232);
             this.groupBox1.TabIndex = 169;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pasajero";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button1
+            // 
+            this.button1.Image = global::Aerolinea.Properties.Resources.aceptar;
+            this.button1.Location = new System.Drawing.Point(355, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 23);
+            this.button1.TabIndex = 193;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Image = global::Aerolinea.Properties.Resources.aceptar;
+            this.btnAceptar.Location = new System.Drawing.Point(355, 72);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(25, 23);
+            this.btnAceptar.TabIndex = 192;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // txtnoPasaporte
+            // 
+            this.txtnoPasaporte.Location = new System.Drawing.Point(433, 205);
+            this.txtnoPasaporte.Mask = "99999999999999";
+            this.txtnoPasaporte.Name = "txtnoPasaporte";
+            this.txtnoPasaporte.Size = new System.Drawing.Size(270, 20);
+            this.txtnoPasaporte.TabIndex = 8;
+            // 
+            // txtEdadPasajero
+            // 
+            this.txtEdadPasajero.Location = new System.Drawing.Point(134, 175);
+            this.txtEdadPasajero.Mask = "9999";
+            this.txtEdadPasajero.Name = "txtEdadPasajero";
+            this.txtEdadPasajero.Size = new System.Drawing.Size(160, 20);
+            this.txtEdadPasajero.TabIndex = 6;
+            // 
+            // txtTelefonoPasajero
+            // 
+            this.txtTelefonoPasajero.Location = new System.Drawing.Point(134, 73);
+            this.txtTelefonoPasajero.Mask = "00000000";
+            this.txtTelefonoPasajero.Name = "txtTelefonoPasajero";
+            this.txtTelefonoPasajero.Size = new System.Drawing.Size(211, 20);
+            this.txtTelefonoPasajero.TabIndex = 4;
+            // 
+            // lstCorreoPasajero
+            // 
+            this.lstCorreoPasajero.FormattingEnabled = true;
+            this.lstCorreoPasajero.Location = new System.Drawing.Point(134, 124);
+            this.lstCorreoPasajero.Name = "lstCorreoPasajero";
+            this.lstCorreoPasajero.Size = new System.Drawing.Size(569, 43);
+            this.lstCorreoPasajero.TabIndex = 188;
+            // 
+            // lstTelefonoPasajero
+            // 
+            this.lstTelefonoPasajero.FormattingEnabled = true;
+            this.lstTelefonoPasajero.Location = new System.Drawing.Point(386, 72);
+            this.lstTelefonoPasajero.Name = "lstTelefonoPasajero";
+            this.lstTelefonoPasajero.Size = new System.Drawing.Size(317, 43);
+            this.lstTelefonoPasajero.TabIndex = 187;
+            // 
             // dtpasajero
             // 
             this.dtpasajero.CustomFormat = "yyyy-MM-dd";
             this.dtpasajero.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpasajero.Location = new System.Drawing.Point(432, 155);
+            this.dtpasajero.Location = new System.Drawing.Point(432, 177);
             this.dtpasajero.Name = "dtpasajero";
-            this.dtpasajero.Size = new System.Drawing.Size(243, 20);
+            this.dtpasajero.Size = new System.Drawing.Size(271, 20);
             this.dtpasajero.TabIndex = 100;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(297, 150);
+            this.label11.Location = new System.Drawing.Point(297, 172);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(133, 19);
             this.label11.TabIndex = 186;
@@ -147,55 +212,27 @@
             // 
             // txtdpiPasajero
             // 
-            this.txtdpiPasajero.Location = new System.Drawing.Point(134, 182);
+            this.txtdpiPasajero.Location = new System.Drawing.Point(134, 206);
             this.txtdpiPasajero.Mask = "0000-00000-0000";
             this.txtdpiPasajero.Name = "txtdpiPasajero";
             this.txtdpiPasajero.Size = new System.Drawing.Size(160, 20);
-            this.txtdpiPasajero.TabIndex = 9;
+            this.txtdpiPasajero.TabIndex = 7;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(28, 182);
+            this.label10.Location = new System.Drawing.Point(28, 206);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 19);
             this.label10.TabIndex = 182;
             this.label10.Text = "DPI:";
             // 
-            // txtTelefonoPasajero2
-            // 
-            this.txtTelefonoPasajero2.Location = new System.Drawing.Point(351, 72);
-            this.txtTelefonoPasajero2.Name = "txtTelefonoPasajero2";
-            this.txtTelefonoPasajero2.Size = new System.Drawing.Size(211, 20);
-            this.txtTelefonoPasajero2.TabIndex = 5;
-            // 
-            // txtCorreoPasajero2
-            // 
-            this.txtCorreoPasajero2.Location = new System.Drawing.Point(134, 124);
-            this.txtCorreoPasajero2.Name = "txtCorreoPasajero2";
-            this.txtCorreoPasajero2.Size = new System.Drawing.Size(541, 20);
-            this.txtCorreoPasajero2.TabIndex = 7;
-            // 
-            // txtnoPasaporte
-            // 
-            this.txtnoPasaporte.Location = new System.Drawing.Point(432, 181);
-            this.txtnoPasaporte.Name = "txtnoPasaporte";
-            this.txtnoPasaporte.Size = new System.Drawing.Size(243, 20);
-            this.txtnoPasaporte.TabIndex = 10;
-            // 
-            // txtEdadPasajero
-            // 
-            this.txtEdadPasajero.Location = new System.Drawing.Point(134, 150);
-            this.txtEdadPasajero.Name = "txtEdadPasajero";
-            this.txtEdadPasajero.Size = new System.Drawing.Size(160, 20);
-            this.txtEdadPasajero.TabIndex = 8;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(300, 180);
+            this.label7.Location = new System.Drawing.Point(300, 202);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 19);
             this.label7.TabIndex = 177;
@@ -205,18 +242,18 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(28, 149);
+            this.label6.Location = new System.Drawing.Point(28, 173);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 19);
             this.label6.TabIndex = 176;
             this.label6.Text = "Edad:";
             // 
-            // txtCorreoPasajero1
+            // txtCorreoPasajero
             // 
-            this.txtCorreoPasajero1.Location = new System.Drawing.Point(134, 98);
-            this.txtCorreoPasajero1.Name = "txtCorreoPasajero1";
-            this.txtCorreoPasajero1.Size = new System.Drawing.Size(541, 20);
-            this.txtCorreoPasajero1.TabIndex = 6;
+            this.txtCorreoPasajero.Location = new System.Drawing.Point(134, 98);
+            this.txtCorreoPasajero.Name = "txtCorreoPasajero";
+            this.txtCorreoPasajero.Size = new System.Drawing.Size(211, 20);
+            this.txtCorreoPasajero.TabIndex = 5;
             // 
             // label2
             // 
@@ -238,18 +275,11 @@
             this.label8.TabIndex = 173;
             this.label8.Text = "Teléfono:";
             // 
-            // txtTelefonoPasajero1
-            // 
-            this.txtTelefonoPasajero1.Location = new System.Drawing.Point(134, 72);
-            this.txtTelefonoPasajero1.Name = "txtTelefonoPasajero1";
-            this.txtTelefonoPasajero1.Size = new System.Drawing.Size(211, 20);
-            this.txtTelefonoPasajero1.TabIndex = 4;
-            // 
             // txtDireccionPasajero
             // 
             this.txtDireccionPasajero.Location = new System.Drawing.Point(134, 46);
             this.txtDireccionPasajero.Name = "txtDireccionPasajero";
-            this.txtDireccionPasajero.Size = new System.Drawing.Size(541, 20);
+            this.txtDireccionPasajero.Size = new System.Drawing.Size(569, 20);
             this.txtDireccionPasajero.TabIndex = 3;
             // 
             // label5
@@ -266,7 +296,7 @@
             // 
             this.txtApellidoPasajero.Location = new System.Drawing.Point(464, 20);
             this.txtApellidoPasajero.Name = "txtApellidoPasajero";
-            this.txtApellidoPasajero.Size = new System.Drawing.Size(211, 20);
+            this.txtApellidoPasajero.Size = new System.Drawing.Size(239, 20);
             this.txtApellidoPasajero.TabIndex = 2;
             // 
             // label4
@@ -305,6 +335,7 @@
             this.groupBox2.TabIndex = 170;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta Pasajero";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // tabControl1
             // 
@@ -348,7 +379,6 @@
             // 
             // grdPasajeros
             // 
-            this.grdPasajeros.AllowUserToAddRows = false;
             this.grdPasajeros.AllowUserToDeleteRows = false;
             this.grdPasajeros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdPasajeros.Location = new System.Drawing.Point(6, 53);
@@ -358,7 +388,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.txtcodPasajero);
+            this.tabPage2.Controls.Add(this.cmbcodPasajero);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.grdcorreoPasajero);
             this.tabPage2.Controls.Add(this.grdtelefonoPasajero);
@@ -369,6 +399,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Datos Adicionales";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // cmbcodPasajero
+            // 
+            this.cmbcodPasajero.FormattingEnabled = true;
+            this.cmbcodPasajero.Location = new System.Drawing.Point(304, 13);
+            this.cmbcodPasajero.Name = "cmbcodPasajero";
+            this.cmbcodPasajero.Size = new System.Drawing.Size(121, 21);
+            this.cmbcodPasajero.TabIndex = 176;
+            this.cmbcodPasajero.SelectedIndexChanged += new System.EventHandler(this.cmbcodPasajero_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -383,17 +422,17 @@
             // grdcorreoPasajero
             // 
             this.grdcorreoPasajero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdcorreoPasajero.Location = new System.Drawing.Point(422, 40);
+            this.grdcorreoPasajero.Location = new System.Drawing.Point(367, 40);
             this.grdcorreoPasajero.Name = "grdcorreoPasajero";
-            this.grdcorreoPasajero.Size = new System.Drawing.Size(415, 126);
+            this.grdcorreoPasajero.Size = new System.Drawing.Size(448, 126);
             this.grdcorreoPasajero.TabIndex = 1;
             // 
             // grdtelefonoPasajero
             // 
             this.grdtelefonoPasajero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdtelefonoPasajero.Location = new System.Drawing.Point(9, 40);
+            this.grdtelefonoPasajero.Location = new System.Drawing.Point(80, 40);
             this.grdtelefonoPasajero.Name = "grdtelefonoPasajero";
-            this.grdtelefonoPasajero.Size = new System.Drawing.Size(407, 126);
+            this.grdtelefonoPasajero.Size = new System.Drawing.Size(265, 126);
             this.grdtelefonoPasajero.TabIndex = 0;
             // 
             // btnBuscarPasajero
@@ -458,7 +497,7 @@
             this.groupBox3.Controls.Add(this.cmbeliminarPasajero);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Location = new System.Drawing.Point(313, 256);
+            this.groupBox3.Location = new System.Drawing.Point(317, 260);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(391, 80);
             this.groupBox3.TabIndex = 171;
@@ -472,6 +511,7 @@
             this.lstmodificoPasajero.Name = "lstmodificoPasajero";
             this.lstmodificoPasajero.Size = new System.Drawing.Size(257, 30);
             this.lstmodificoPasajero.TabIndex = 183;
+            this.lstmodificoPasajero.SelectedIndexChanged += new System.EventHandler(this.lstmodificoPasajero_SelectedIndexChanged_1);
             // 
             // cmbeliminarPasajero
             // 
@@ -522,12 +562,19 @@
             this.sALIRToolStripMenuItem.Text = "SALIR";
             this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
             // 
-            // txtcodPasajero
+            // btnrefrescarBd
             // 
-            this.txtcodPasajero.Location = new System.Drawing.Point(287, 13);
-            this.txtcodPasajero.Name = "txtcodPasajero";
-            this.txtcodPasajero.Size = new System.Drawing.Size(443, 20);
-            this.txtcodPasajero.TabIndex = 174;
+            this.btnrefrescarBd.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrefrescarBd.Image = global::Aerolinea.Properties.Resources.refresh;
+            this.btnrefrescarBd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnrefrescarBd.Location = new System.Drawing.Point(744, 286);
+            this.btnrefrescarBd.Name = "btnrefrescarBd";
+            this.btnrefrescarBd.Size = new System.Drawing.Size(110, 50);
+            this.btnrefrescarBd.TabIndex = 172;
+            this.btnrefrescarBd.Text = "RefrescarBD";
+            this.btnrefrescarBd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnrefrescarBd.UseVisualStyleBackColor = true;
+            this.btnrefrescarBd.Click += new System.EventHandler(this.btnrefrescarBd_Click);
             // 
             // frmcontrolPasajero
             // 
@@ -536,6 +583,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(914, 543);
             this.ControlBox = false;
+            this.Controls.Add(this.btnrefrescarBd);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -579,16 +627,11 @@
         private System.Windows.Forms.Button btnModificarPasajero;
         private System.Windows.Forms.Button btnBuscarPasajero;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTelefonoPasajero2;
-        private System.Windows.Forms.TextBox txtCorreoPasajero2;
-        private System.Windows.Forms.TextBox txtnoPasaporte;
-        private System.Windows.Forms.TextBox txtEdadPasajero;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCorreoPasajero1;
+        private System.Windows.Forms.TextBox txtCorreoPasajero;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtTelefonoPasajero1;
         private System.Windows.Forms.TextBox txtDireccionPasajero;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtApellidoPasajero;
@@ -616,7 +659,15 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtcodPasajero;
+        private System.Windows.Forms.Button btnrefrescarBd;
+        private System.Windows.Forms.ListBox lstTelefonoPasajero;
+        private System.Windows.Forms.ListBox lstCorreoPasajero;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.MaskedTextBox txtnoPasaporte;
+        private System.Windows.Forms.MaskedTextBox txtEdadPasajero;
+        private System.Windows.Forms.MaskedTextBox txtTelefonoPasajero;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbcodPasajero;
 
     }
 }
