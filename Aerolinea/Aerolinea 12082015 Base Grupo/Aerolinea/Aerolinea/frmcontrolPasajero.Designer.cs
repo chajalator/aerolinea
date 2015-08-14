@@ -69,13 +69,13 @@
             this.btnModificarPasajero = new System.Windows.Forms.Button();
             this.btnGuardarPasajero = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lstmodificoPasajero = new System.Windows.Forms.ListBox();
             this.cmbeliminarPasajero = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnrefrescarBd = new System.Windows.Forms.Button();
+            this.cmbmodificoPasajero = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -424,7 +424,7 @@
             this.grdcorreoPasajero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdcorreoPasajero.Location = new System.Drawing.Point(367, 40);
             this.grdcorreoPasajero.Name = "grdcorreoPasajero";
-            this.grdcorreoPasajero.Size = new System.Drawing.Size(448, 126);
+            this.grdcorreoPasajero.Size = new System.Drawing.Size(326, 126);
             this.grdcorreoPasajero.TabIndex = 1;
             // 
             // grdtelefonoPasajero
@@ -493,7 +493,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.lstmodificoPasajero);
+            this.groupBox3.Controls.Add(this.cmbmodificoPasajero);
             this.groupBox3.Controls.Add(this.cmbeliminarPasajero);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
@@ -503,15 +503,6 @@
             this.groupBox3.TabIndex = 171;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Modificar/Eliminar";
-            // 
-            // lstmodificoPasajero
-            // 
-            this.lstmodificoPasajero.FormattingEnabled = true;
-            this.lstmodificoPasajero.Location = new System.Drawing.Point(105, 13);
-            this.lstmodificoPasajero.Name = "lstmodificoPasajero";
-            this.lstmodificoPasajero.Size = new System.Drawing.Size(257, 30);
-            this.lstmodificoPasajero.TabIndex = 183;
-            this.lstmodificoPasajero.SelectedIndexChanged += new System.EventHandler(this.lstmodificoPasajero_SelectedIndexChanged_1);
             // 
             // cmbeliminarPasajero
             // 
@@ -575,6 +566,16 @@
             this.btnrefrescarBd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnrefrescarBd.UseVisualStyleBackColor = true;
             this.btnrefrescarBd.Click += new System.EventHandler(this.btnrefrescarBd_Click);
+            // 
+            // cmbmodificoPasajero
+            // 
+            this.cmbmodificoPasajero.FormattingEnabled = true;
+            this.cmbmodificoPasajero.Location = new System.Drawing.Point(105, 18);
+            this.cmbmodificoPasajero.Name = "cmbmodificoPasajero";
+            this.cmbmodificoPasajero.Size = new System.Drawing.Size(257, 21);
+            this.cmbmodificoPasajero.TabIndex = 184;
+            this.cmbmodificoPasajero.Text = "Seleccione Código a Modificar";
+            this.cmbmodificoPasajero.SelectedIndexChanged += new System.EventHandler(this.cmbmodificoPasajero_SelectedIndexChanged);
             // 
             // frmcontrolPasajero
             // 
@@ -653,7 +654,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox lstmodificoPasajero;
         private System.Windows.Forms.ComboBox cmbeliminarPasajero;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -668,6 +668,7 @@
         private System.Windows.Forms.MaskedTextBox txtTelefonoPasajero;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cmbcodPasajero;
+        private System.Windows.Forms.ComboBox cmbmodificoPasajero;
 
     }
 }
