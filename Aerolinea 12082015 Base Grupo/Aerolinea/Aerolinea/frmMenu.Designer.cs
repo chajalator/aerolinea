@@ -133,6 +133,7 @@
             this.uSUARIOSToolStripMenuItem.Name = "uSUARIOSToolStripMenuItem";
             this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(104, 23);
             this.uSUARIOSToolStripMenuItem.Text = "USUARIOS";
+            this.uSUARIOSToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOSToolStripMenuItem_Click);
             // 
             // aYUDAToolStripMenuItem
             // 

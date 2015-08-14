@@ -75,3 +75,21 @@ C:\Users\pamel_000\Documents\Visual Studio 2013\Projects\Aerolinea 11082015 base
 C:\Users\pamel_000\Documents\Visual Studio 2013\Projects\Aerolinea 11082015 base\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmcontrolPasajero.resources
 C:\Users\pamel_000\Documents\Visual Studio 2013\Projects\Aerolinea 11082015 base\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmseleccionReservacion.resources
 C:\Users\pamel_000\Documents\Visual Studio 2013\Projects\Aerolinea 11082015 base\Aerolinea\Aerolinea\obj\Debug\Aerolinea.csproj.GenerateResource.Cache
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\bin\Debug\Aerolinea.exe.config
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.exe
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.pdb
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\bin\Debug\Aerolinea.exe
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\bin\Debug\Aerolinea.pdb
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.csprojResolveAssemblyReference.cache
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmcontrolUsuarios.resources
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmingresoReservacion.resources
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmcontrolVuelo.resources
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmcontrolAvion.resources
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmcontrolLocalizaciones.resources
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmLogin.resources
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmMenu.resources
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.Properties.Resources.resources
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmrealizacionPago.resources
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmcontrolPasajero.resources
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.frmseleccionReservacion.resources
+C:\Users\JGerardo\Documents\Visual Studio 2013\Projects\Aerolinea 12082015 Base Grupo\Aerolinea\Aerolinea\obj\Debug\Aerolinea.csproj.GenerateResource.Cache

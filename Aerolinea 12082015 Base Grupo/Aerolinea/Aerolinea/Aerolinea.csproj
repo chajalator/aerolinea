@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmcontrolUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmcontrolUsuarios.designer.cs">
+      <DependentUpon>frmcontrolUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmingresoReservacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="frmseleccionReservacion.designer.cs">
       <DependentUpon>frmseleccionReservacion.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmcontrolUsuarios.resx">
+      <DependentUpon>frmcontrolUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmingresoReservacion.resx">
       <DependentUpon>frmingresoReservacion.cs</DependentUpon>
     </EmbeddedResource>

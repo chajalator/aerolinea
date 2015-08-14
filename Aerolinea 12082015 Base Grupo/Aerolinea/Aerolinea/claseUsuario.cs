@@ -13,9 +13,8 @@ namespace Aerolinea
         public static int Autentificar(String txtUsuario, String txtContra)
         {
             int resultado = -1;
-
             MySqlConnection conexion = clasconexion.funobtenerConexion();
-            MySqlCommand comando = new MySqlCommand(String.Format("select * from mausuario where vuser = '{0}' and vpassword = '{1}'", txtUsuario, txtContra), conexion);
+            MySqlCommand comando = new MySqlCommand(String.Format("select * from mausuario where vuser = '{0}' and vpassword = '{1}' and vestado = 'ACTIVO'", txtUsuario, txtContra), conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
             while (reader.Read())
@@ -30,7 +29,7 @@ namespace Aerolinea
             //int resultado = -1;
             String total = "";
             MySqlConnection conexion = clasconexion.funobtenerConexion();
-            MySqlCommand comando = new MySqlCommand(String.Format("select mausuario.vapeusuario , mausuario.vuser , trtipousuario.vdescripciontipo from mausuario inner join trtipousuario on trtipousuario.ncodtipousuario = mausuario.ncodtipousuario where vuser = '{0}' and vpassword = '{1}'", txtUsuario, txtContra), conexion);
+            MySqlCommand comando = new MySqlCommand(String.Format("select mausuario.vapeusuario , mausuario.vuser , matipousuario.vdescripciontipo from mausuario inner join matipousuario on matipousuario.ncodtipousuario = mausuario.ncodtipousuario where vuser = '{0}' and vpassword = '{1}'", txtUsuario, txtContra), conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {

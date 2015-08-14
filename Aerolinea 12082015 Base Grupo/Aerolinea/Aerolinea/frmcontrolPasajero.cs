@@ -90,7 +90,6 @@ namespace Aerolinea
                 clasconexion.funobtenerConexion().Close();
             }
         }
-
         private void btnGuardarPasajero_Click(object sender, EventArgs e)
         {
             try
@@ -230,7 +229,7 @@ namespace Aerolinea
                 }
             }
             
-            
+                
         }
 
         private void mENUToolStripMenuItem_Click(object sender, EventArgs e)

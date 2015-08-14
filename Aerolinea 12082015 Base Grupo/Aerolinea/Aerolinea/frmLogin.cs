@@ -70,7 +70,7 @@ namespace Aerolinea
                 //menu.Show();
             }
             else
-                MessageBox.Show("Usario o Password Incorrecto, Vuelva a Intentarlo");
+                MessageBox.Show("Usuario o Password Incorrecto, Si el problema persiste su Usuario esta Inactivo");
                 txtUser.Clear();
                 txtPass.Clear();
         }

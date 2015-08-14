@@ -117,5 +117,11 @@ namespace Aerolinea
         {
 
         }
+
+        private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmcontrolUsuarios usuario = new frmcontrolUsuarios();
+            usuario.Show();
+        }
     }
 }
