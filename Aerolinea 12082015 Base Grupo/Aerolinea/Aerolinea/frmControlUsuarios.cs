@@ -48,7 +48,6 @@ namespace Aerolinea
             {
                 int ifilas;
                 int iCodigoUsuario;
-                String iComboCodigo;
                 using (clasconexion.funobtenerConexion())
                 {
                     string squery = "SELECT COUNT(*) As Cant FROM aerolinea.MaUSUARIO ";
@@ -133,13 +132,13 @@ namespace Aerolinea
         {
             using (clasconexion.funobtenerConexion())
             {
-                string squery = "SELECT ncodusuario, vnomusuario FROM aerolinea.MaUSUARIO where vestado='ACTIVO'";
+                string squery = "SELECT ncodusuario, vuser FROM aerolinea.MaUSUARIO where vestado='ACTIVO'";
                 MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                 DataTable dtDatos = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
                 mdaDatos.Fill(dtDatos);
                 cmbeliminarUsuario.ValueMember = "ncodusuario";
-                cmbeliminarUsuario.DisplayMember = "vnomusuario";
+                cmbeliminarUsuario.DisplayMember = "vuser";
                 cmbeliminarUsuario.DataSource = dtDatos;
                 clasconexion.funobtenerConexion().Close();
             }
@@ -178,6 +177,24 @@ namespace Aerolinea
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
             funeliminarUsuario();
+            funllenarComboEliminarUsuario();
+        }
+
+        private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnModificarUsuario_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmmodificarUsuario modificar = new frmmodificarUsuario();
+            modificar.Show();
+        }
+
+        private void rEFRESCARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            funconsultarUsuario();
             funllenarComboEliminarUsuario();
         }
     }
