@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,7 +58,7 @@ namespace Aerolinea
                 }
                 using (clasconexion.funobtenerConexion())
                 {
-                    string sInsertarUsuario = "INSERT INTO aerolinea.MaUSUARIO  (ncodusuario, vnomusuario, vapeusuario, vuser, vpassword,vestado, ncodtipousuario)values(" + iCodigoUsuario + ",'" + txtNombre.Text + "','" + txtApellido.Text + "','" + txtUser.Text + "'," + txtPassword.Text + ",'" + "ACTIVO" +"','" + cmbSeleccionartipo.SelectedValue+ "')";
+                    string sInsertarUsuario = "INSERT INTO aerolinea.MaUSUARIO  (ncodusuario, vnomusuario, vapeusuario, vuser, vpassword,vestado, ncodtipousuario)values(" + iCodigoUsuario + ",'" + txtNombre.Text + "','" + txtApellido.Text + "','" + txtUser.Text + "','" + txtPassword.Text + "','" + "ACTIVO" +"','" + cmbSeleccionartipo.SelectedValue+ "')";
                     MySqlCommand cmd2 = new MySqlCommand(sInsertarUsuario, clasconexion.funobtenerConexion());
                     MySqlDataReader MyReader;
                     MyReader = cmd2.ExecuteReader();
