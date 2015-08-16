@@ -28,9 +28,10 @@ namespace Aerolinea
             //label14.Visible = false;
             //cmbestadoPasajero.Visible = false;
             funconsultarPasajeros();
-            funllenarComboModificarPasajero();
             funllenarComboEliminarPasajero();
             funllenarComboAdicionalesPasajero();
+            cmbeliminarPasajero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmbcodPasajero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             
 
         }
@@ -67,26 +68,7 @@ namespace Aerolinea
             }
         }
 
-        private void funllenarComboModificarPasajero()
-        {
-
-            using (clasconexion.funobtenerConexion())
-            {
-                string squeryModificar = "SELECT ncodpasajero  FROM aerolinea.MaPASAJERO";
-                MySqlCommand cmdc = new MySqlCommand(squeryModificar, clasconexion.funobtenerConexion());
-                DataTable dtdatosModificar = new DataTable();
-                MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squeryModificar, clasconexion.funobtenerConexion());
-                mdaDatos.Fill(dtdatosModificar);
-
-                cmbmodificoPasajero.ValueMember = "ncodpasajero";
-                cmbmodificoPasajero.DisplayMember = "ncodpasajero";
-                cmbmodificoPasajero.DataSource = dtdatosModificar;
-                clasconexion.funobtenerConexion().Close();
-                               
-               
-            }
-            clasconexion.funobtenerConexion().Close();
-        }
+        
 
         private void funconsultarPasajeros()
         {
@@ -248,71 +230,17 @@ namespace Aerolinea
            
         }
 
-        private void funbuscarPasajeroAModificar()
-        {
-            using (clasconexion.funobtenerConexion())
-            {
-                string squery = "SELECT ncodpasajero as CodigoPasajero,vnompasajero as NombrePasajero,vapepasajero as ApellidoPasajero,vdireccion as DireccionPasajero,nedadpasajero as EdadPasajero,vdpi as DPI, DATE_FORMAT(dfechanacimiento, '%Y-%m-%d') as FechaNacimiento, vnopasaporte as PasaportePasajero,vestado as EstadoPasajero FROM aerolinea.MaPASAJERO  where ncodpasajero=" + cmbmodificoPasajero.Text;
-                MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
-                DataTable dtdatosPasajero = new DataTable();
-                MySqlDataAdapter mdadatosPasajero = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
-                mdadatosPasajero.Fill(dtdatosPasajero);
-                grdPasajeros.DataSource = dtdatosPasajero;
-                clasconexion.funobtenerConexion().Close();
-            }
-
-
-            
-        }
+        
 
         private void btnModificarPasajero_Click(object sender, EventArgs e)
         {
-            funmodificarPasajero();
-            //label14.Visible = false;
-            //cmbestadoPasajero.Visible = false;
+          
+            frmmodificarPasajero frmod = new frmmodificarPasajero();
+            frmod.Show();
+         
         }
 
-        private void funmodificarPasajero()
-        {
-           
-                using (clasconexion.funobtenerConexion())
-                {
-                    try
-                    {
-                        MySqlCommand cmd = clasconexion.funobtenerConexion().CreateCommand();
-                        cmd.CommandText = "UPDATE aerolinea.MaPASAJERO  set vnompasajero = @nompasajero,vapepasajero = @apepasajero,vdireccion = @dirpasajero,nedadpasajero = @edadpasajero,vdpi = @dpipasajero,dfechanacimiento = @fechapasajero,vnopasaporte = @paspasajero,vestado = @estadopasajero where ncodpasajero=" + cmbmodificoPasajero.Text;
-                        cmd.Parameters.Add("@nompasajero", MySqlDbType.VarChar);  cmd.Parameters.Add("@apepasajero", MySqlDbType.VarChar);
-                        cmd.Parameters.Add("@dirpasajero", MySqlDbType.VarChar);  cmd.Parameters.Add("@edadpasajero", MySqlDbType.Decimal);
-                        cmd.Parameters.Add("@dpipasajero", MySqlDbType.VarChar);  cmd.Parameters.Add("@fechapasajero", MySqlDbType.Date);
-                        cmd.Parameters.Add("@paspasajero", MySqlDbType.VarChar);  cmd.Parameters.Add("@estadopasajero", MySqlDbType.VarChar);
-                                            
-
-                        for (int i = 0; i < this.grdPasajeros.Rows.Count - 1; i++)
-                        {
-
-                            cmd.Parameters["@nompasajero"].Value = this.grdPasajeros[1, i].Value;
-                            cmd.Parameters["@apepasajero"].Value = this.grdPasajeros[2, i].Value;
-                            cmd.Parameters["@dirpasajero"].Value = this.grdPasajeros[3, i].Value;
-                            cmd.Parameters["@edadpasajero"].Value = this.grdPasajeros[4, i].Value;
-                            cmd.Parameters["@dpipasajero"].Value = this.grdPasajeros[5, i].Value;
-                            cmd.Parameters["@fechapasajero"].Value = this.grdPasajeros[6, i].Value;
-                            cmd.Parameters["@paspasajero"].Value = this.grdPasajeros[7, i].Value;
-                            cmd.Parameters["@estadopasajero"].Value = this.grdPasajeros[8, i].Value;
-                           
-                            cmd.ExecuteNonQuery();
-                        }      
-
-                        clasconexion.funobtenerConexion().Close();
-
-                        funconsultarPasajeros();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            
-        }
+        
 
        
 
@@ -332,7 +260,7 @@ namespace Aerolinea
         private void funrefrescarDatosBD()
         {
             funllenarComboEliminarPasajero();
-            funllenarComboModificarPasajero();
+            funconsultarPasajeros();
             funllenarComboAdicionalesPasajero();
         }
 
@@ -394,9 +322,6 @@ namespace Aerolinea
             funbuscarAdicionalesPasajero();
         }
 
-        private void cmbmodificoPasajero_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            funbuscarPasajeroAModificar();
-        }
+       
     }
 }
