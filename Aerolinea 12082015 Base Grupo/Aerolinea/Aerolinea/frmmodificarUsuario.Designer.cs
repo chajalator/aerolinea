@@ -102,6 +102,9 @@
             // 
             this.cmbSeleccionartipoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSeleccionartipoModificar.FormattingEnabled = true;
+            this.cmbSeleccionartipoModificar.Items.AddRange(new object[] {
+            "ACTIVO",
+            "INACTIVO"});
             this.cmbSeleccionartipoModificar.Location = new System.Drawing.Point(110, 222);
             this.cmbSeleccionartipoModificar.Name = "cmbSeleccionartipoModificar";
             this.cmbSeleccionartipoModificar.Size = new System.Drawing.Size(100, 24);
