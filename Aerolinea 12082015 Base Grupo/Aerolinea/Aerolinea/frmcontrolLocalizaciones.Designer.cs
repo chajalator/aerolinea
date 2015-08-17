@@ -145,6 +145,7 @@
             this.tabpLocalizacion.Controls.Add(this.txtLugar);
             this.tabpLocalizacion.Controls.Add(this.label1);
             this.tabpLocalizacion.Controls.Add(this.groupBox2);
+            this.tabpLocalizacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabpLocalizacion.Location = new System.Drawing.Point(4, 22);
             this.tabpLocalizacion.Name = "tabpLocalizacion";
             this.tabpLocalizacion.Padding = new System.Windows.Forms.Padding(3);

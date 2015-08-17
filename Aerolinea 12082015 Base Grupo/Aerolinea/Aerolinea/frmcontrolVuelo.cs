@@ -26,8 +26,8 @@ namespace Aerolinea
                 DataTable dtDatos = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
                 mdaDatos.Fill(dtDatos);
-                cmbDestino.DataSource = dtDatos;
-                cmbDestino.DisplayMember = "Lugar";
+                cmbdestino.DataSource = dtDatos;
+                cmbdestino.DisplayMember = "Lugar";
                 clasconexion.funobtenerConexion().Close();
             }
         }
@@ -41,8 +41,8 @@ namespace Aerolinea
                 DataTable dtDatosL = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squeryL, clasconexion.funobtenerConexion());
                 mdaDatos.Fill(dtDatosL);
-                cmbOrigen.DataSource = dtDatosL;
-                cmbOrigen.DisplayMember = "Lugar";
+                cmbtipoVuelo.DataSource = dtDatosL;
+                cmbtipoVuelo.DisplayMember = "Lugar";
                 clasconexion.funobtenerConexion().Close();
             }
         }
@@ -56,8 +56,8 @@ namespace Aerolinea
                 DataTable dtDatos2 = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery2, clasconexion.funobtenerConexion());
                 mdaDatos.Fill(dtDatos2);
-                cmbCodAvion.DataSource = dtDatos2;
-                cmbCodAvion.DisplayMember = "codigo";
+                cmbaerolinea.DataSource = dtDatos2;
+                cmbaerolinea.DisplayMember = "codigo";
                 clasconexion.funobtenerConexion().Close();
             }
         }
@@ -92,9 +92,9 @@ namespace Aerolinea
         }
         private void funlimpiar() {
             
-            cmbCodAvion.Text = "";
-            cmbDestino.Text = "";
-            cmbOrigen.Text = "";
+            cmbaerolinea.Text = "";
+            cmbdestino.Text = "";
+            cmbtipoVuelo.Text = "";
             mtxhoraDespegue.Text = "";
             mtxhoraLlegada.Text = "";
         }
@@ -145,7 +145,7 @@ namespace Aerolinea
                 using (clasconexion.funobtenerConexion())
                 {
                     //if((txtCodVuelo.Text="") || (cmbCodAvion.Text="") || (cmbDestino.Text="") || (cmbOrigen.Text="") || (mtxhoraDespegue.Text="") || (mtxhoraLlegada.Text="")){
-                    string sinsertarVuelo = "INSERT INTO MaVUELO (ncodvuelo,vlugarsalida,dfechavuelo,dthoradespegue,dthoraaterrisaje,ncodavion,ncodtipodestino,ndisponibilidad) VALUES('" + icodigoVuelo + "','" + cmbOrigen.Text + "','" + dtFechaVuelo.Text + "','" + mtxhoraDespegue.Text + "','" + mtxhoraLlegada.Text + "','" + cmbCodAvion.Text + "',' ',1)";
+                    string sinsertarVuelo = "INSERT INTO MaVUELO (ncodvuelo,vlugarsalida,dfechavuelo,dthoradespegue,dthoraaterrisaje,ncodavion,ncodtipodestino,ndisponibilidad) VALUES('" + icodigoVuelo + "','" + cmbtipoVuelo.Text + "','" + dtFechaVuelo.Text + "','" + mtxhoraDespegue.Text + "','" + mtxhoraLlegada.Text + "','" + cmbaerolinea.Text + "',' ',1)";
                     MySqlCommand cmd3 = new MySqlCommand(sinsertarVuelo, clasconexion.funobtenerConexion());
                     MySqlDataReader MyReader;
                     MyReader = cmd3.ExecuteReader();
