@@ -74,5 +74,15 @@ namespace Aerolinea
                 txtUser.Clear();
                 txtPass.Clear();
         }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
