@@ -31,7 +31,7 @@ namespace Aerolinea
             using (clasconexion.funobtenerConexion())
             {
 
-                string squery = "SELECT ncodtipousuario, vdescripciontipo FROM aerolinea.MaTIPOUSUARIO";
+                string squery = "SELECT ncodtipousuario, vdescripciontipo FROM AEROLINEA.MaTIPOUSUARIO";
                 MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                 DataTable dtDatos = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
@@ -47,7 +47,7 @@ namespace Aerolinea
             using (clasconexion.funobtenerConexion())
             {
 
-                string squery = "SELECT ncodusuario, vuser FROM aerolinea.MaUSUARIO";
+                string squery = "SELECT ncodusuario, vuser FROM AEROLINEA.MaUSUARIO";
                 MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                 DataTable dtDatos = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
@@ -62,7 +62,7 @@ namespace Aerolinea
         {
             using (clasconexion.funobtenerConexion())
             {
-                string squeryBuscarUsuario = "SELECT ncodusuario, vnomusuario, vapeusuario, vuser, vpassword, vestado, ncodtipousuario FROM aerolinea.MaUSUARIO where vuser = '" + cmbusuarioModificar.Text+ "';";
+                string squeryBuscarUsuario = "SELECT ncodusuario, vnomusuario, vapeusuario, vuser, vpassword, vestado, ncodtipousuario FROM AEROLINEA.MaUSUARIO where vuser = '" + cmbusuarioModificar.Text+ "';";
                 MySqlCommand cmdc = new MySqlCommand(squeryBuscarUsuario, clasconexion.funobtenerConexion());
                 MySqlDataReader drdr = cmdc.ExecuteReader();
                 if (drdr.Read())
