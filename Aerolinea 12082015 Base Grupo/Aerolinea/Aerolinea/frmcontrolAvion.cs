@@ -173,6 +173,7 @@ namespace Aerolinea
 
         private void cmbrefrescar_Click(object sender, EventArgs e)
         {
+            funcomboElimnar();
             funconsultarAviones();
             funlimpiar();
 

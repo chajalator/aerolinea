@@ -41,13 +41,14 @@ namespace Aerolinea
         {
             using (clasconexion.funobtenerConexion())
             {
-                string squeryaeropuerto = "SELECT vdescripcion as Lugar FROM TrDESTINO ORDER BY vdescripcion ASC;";
+                string squeryaeropuerto = "SELECT vdescripcion as Lugar,ncodtipodestino as Destin FROM TrDESTINO ORDER BY vdescripcion ASC;";
                 MySqlCommand cmdA = new MySqlCommand(squeryaeropuerto, clasconexion.funobtenerConexion());
                 DataTable dtAeropuerto = new DataTable();
                 MySqlDataAdapter mdaDatosA = new MySqlDataAdapter(squeryaeropuerto, clasconexion.funobtenerConexion());
                 mdaDatosA.Fill(dtAeropuerto);
                 cmbLugar.DataSource = dtAeropuerto;
                 cmbLugar.DisplayMember = "Lugar";
+                cmbLugar.ValueMember = "Destin";
                 clasconexion.funobtenerConexion().Close();
             }
         }
@@ -140,11 +141,12 @@ namespace Aerolinea
                     MessageBox.Show(ex.Message);
                 }
             }
-            else if(tabLocalizacion.SelectedIndex==1){
-                funlimpiar();
+            else if (tabLocalizacion.SelectedIndex == 1)
+            {
+                
                 try
                 {
-                    if ((txtAeropuerto.Text != "") && (cmbLugar.Text !=""))
+                    if ((txtAeropuerto.Text != "") && (cmbLugar.Text != ""))
                     {
                         using (clasconexion.funobtenerConexion())
                         {
@@ -157,8 +159,6 @@ namespace Aerolinea
                             string sposicion = "SELECT COUNT(*) As Cant FROM aerolinea.MaAEROPUERTO";
                             MySqlCommand cpos = new MySqlCommand(sposicion, clasconexion.funobtenerConexion());
                             icodigoAeropuerto = (Convert.ToInt32(cpos.ExecuteScalar())) + 1;
-
-
 
                             string sinsertaraeropuerto = "INSERT INTO aerolinea.MaAEROPUERTO (ncodaeropuerto,vnombreaeropuerto,ncodtipodestino) VALUES(" + icodigoAeropuerto + ",'" + txtAeropuerto.Text + "'," + idestino + ")";
                             MySqlCommand cinsertar = new MySqlCommand(sinsertaraeropuerto, clasconexion.funobtenerConexion());
