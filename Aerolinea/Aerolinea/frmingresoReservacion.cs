@@ -154,8 +154,8 @@ namespace Aerolinea
 
         public void btnReservar_Click(object sender, EventArgs e)
         {
-            MySqlConnection conectar = new MySqlConnection("server=192.168.15.1; database=AEROLINEA; Uid=Aerolinea; pwd=aerolinea2015;");
-            //MySqlConnection conectar = new MySqlConnection("server=localhost;userid=root;password= ;database=aerolinea");
+            //MySqlConnection conectar = new MySqlConnection("server=192.168.15.1; database=AEROLINEA; Uid=Aerolinea; pwd=aerolinea2015;");
+            MySqlConnection conectar = new MySqlConnection("server=localhost;userid=root;password= ;database=aerolinea");
              svalorSeleccionado = CbSeleccionCodigo.SelectedValue.ToString();
             ds = new DataSet();
             dt = ds.Tables.Add();
@@ -177,8 +177,8 @@ namespace Aerolinea
             int numRowsUpdated = cmd.ExecuteNonQuery();
             MessageBox.Show("actualizado");
 
-            MySqlConnection conectar2 = new MySqlConnection("server=192.168.15.1; database=AEROLINEA; Uid=Aerolinea; pwd=aerolinea2015;");
-            //MySqlConnection conectar2 = new MySqlConnection("server=localhost;userid=root;password= ;database=xx");
+            //MySqlConnection conectar2 = new MySqlConnection("server=192.168.15.1; database=AEROLINEA; Uid=Aerolinea; pwd=aerolinea2015;");
+            MySqlConnection conectar2 = new MySqlConnection("server=localhost;userid=root;password= ;database=aerolinea");
             svalorSeleccionado2 = CbSeleccionCodigo.SelectedValue.ToString();
             ds3 = new DataSet();
             dt3 = ds3.Tables.Add();

@@ -32,10 +32,12 @@
             this.cmbmodificoPasajero = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnBuscarPasajero = new System.Windows.Forms.Button();
+            this.btnGuardarPasajero = new System.Windows.Forms.Button();
+            this.cmbestadoPasajero = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtnoPasaporte = new System.Windows.Forms.MaskedTextBox();
             this.txtEdadPasajero = new System.Windows.Forms.MaskedTextBox();
             this.dtpasajero = new System.Windows.Forms.DateTimePicker();
@@ -50,47 +52,45 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNomPasajero = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbestadoPasajero = new System.Windows.Forms.ComboBox();
-            this.cmbcodigoModificar = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.txtTelefonoPasajero = new System.Windows.Forms.MaskedTextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnBuscarPasajero = new System.Windows.Forms.Button();
-            this.btnGuardarPasajero = new System.Windows.Forms.Button();
-            this.btnagregarCorreo = new System.Windows.Forms.Button();
-            this.btnbuscarCodModificar = new System.Windows.Forms.Button();
-            this.btneliminarCorreo = new System.Windows.Forms.Button();
-            this.btnmodificarCorreo = new System.Windows.Forms.Button();
-            this.cmbcorreosPasajero = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.radnuevoCorreo = new System.Windows.Forms.RadioButton();
-            this.radmodificarCorreo = new System.Windows.Forms.RadioButton();
-            this.radeliminarCorreo = new System.Windows.Forms.RadioButton();
-            this.txtCorreoPasajero = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rEFRESCARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cmbtelefonosPasajero = new System.Windows.Forms.ComboBox();
             this.radeliminarTelefono = new System.Windows.Forms.RadioButton();
             this.radmodificarTelefono = new System.Windows.Forms.RadioButton();
             this.radnuevoTelefono = new System.Windows.Forms.RadioButton();
             this.btnmodificarTelefono = new System.Windows.Forms.Button();
             this.btneliminarTelefono = new System.Windows.Forms.Button();
             this.btnnuevoTelefono = new System.Windows.Forms.Button();
-            this.cmbtelefonosPasajero = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.txtTelefonoPasajero = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txtCorreoPasajero = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.radeliminarCorreo = new System.Windows.Forms.RadioButton();
+            this.radmodificarCorreo = new System.Windows.Forms.RadioButton();
+            this.radnuevoCorreo = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbcorreosPasajero = new System.Windows.Forms.ComboBox();
+            this.btnmodificarCorreo = new System.Windows.Forms.Button();
+            this.btneliminarCorreo = new System.Windows.Forms.Button();
+            this.btnagregarCorreo = new System.Windows.Forms.Button();
+            this.btnbuscarCodModificar = new System.Windows.Forms.Button();
+            this.cmbcodigoModificar = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEFRESCARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbmodificoPasajero
@@ -123,16 +123,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pasajero";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(234, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 23);
-            this.label1.TabIndex = 127;
-            this.label1.Text = "Modificar Pasajero";
             // 
             // tabControl1
             // 
@@ -175,19 +165,54 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // tabPage2
+            // btnBuscarPasajero
             // 
-            this.tabPage2.Controls.Add(this.tabControl2);
-            this.tabPage2.Controls.Add(this.btnbuscarCodModificar);
-            this.tabPage2.Controls.Add(this.cmbcodigoModificar);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(648, 298);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Datos Adicionales";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.btnBuscarPasajero.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarPasajero.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarPasajero.Image")));
+            this.btnBuscarPasajero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarPasajero.Location = new System.Drawing.Point(424, 12);
+            this.btnBuscarPasajero.Name = "btnBuscarPasajero";
+            this.btnBuscarPasajero.Size = new System.Drawing.Size(110, 50);
+            this.btnBuscarPasajero.TabIndex = 215;
+            this.btnBuscarPasajero.Text = "Buscar";
+            this.btnBuscarPasajero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarPasajero.UseVisualStyleBackColor = true;
+            this.btnBuscarPasajero.Click += new System.EventHandler(this.btnBuscarPasajero_Click);
+            // 
+            // btnGuardarPasajero
+            // 
+            this.btnGuardarPasajero.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarPasajero.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarPasajero.Image")));
+            this.btnGuardarPasajero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarPasajero.Location = new System.Drawing.Point(516, 99);
+            this.btnGuardarPasajero.Name = "btnGuardarPasajero";
+            this.btnGuardarPasajero.Size = new System.Drawing.Size(110, 50);
+            this.btnGuardarPasajero.TabIndex = 214;
+            this.btnGuardarPasajero.Text = "Guardar";
+            this.btnGuardarPasajero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardarPasajero.UseVisualStyleBackColor = true;
+            this.btnGuardarPasajero.Click += new System.EventHandler(this.btnGuardarPasajero_Click);
+            // 
+            // cmbestadoPasajero
+            // 
+            this.cmbestadoPasajero.FormattingEnabled = true;
+            this.cmbestadoPasajero.Items.AddRange(new object[] {
+            "ACTIVO",
+            "INACTIVO"});
+            this.cmbestadoPasajero.Location = new System.Drawing.Point(160, 252);
+            this.cmbestadoPasajero.Name = "cmbestadoPasajero";
+            this.cmbestadoPasajero.Size = new System.Drawing.Size(160, 21);
+            this.cmbestadoPasajero.TabIndex = 213;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(52, 251);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 19);
+            this.label9.TabIndex = 212;
+            this.label9.Text = "Estado:";
             // 
             // txtnoPasaporte
             // 
@@ -313,56 +338,19 @@
             this.label3.TabIndex = 203;
             this.label3.Text = "Nombre:";
             // 
-            // menuStrip1
+            // tabPage2
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sALIRToolStripMenuItem,
-            this.rEFRESCARToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(692, 27);
-            this.menuStrip1.TabIndex = 188;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(52, 251);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 19);
-            this.label9.TabIndex = 212;
-            this.label9.Text = "No. Pasaporte:";
-            // 
-            // cmbestadoPasajero
-            // 
-            this.cmbestadoPasajero.FormattingEnabled = true;
-            this.cmbestadoPasajero.Items.AddRange(new object[] {
-            "ACTIVO",
-            "INACTIVO"});
-            this.cmbestadoPasajero.Location = new System.Drawing.Point(160, 252);
-            this.cmbestadoPasajero.Name = "cmbestadoPasajero";
-            this.cmbestadoPasajero.Size = new System.Drawing.Size(160, 21);
-            this.cmbestadoPasajero.TabIndex = 213;
-            // 
-            // cmbcodigoModificar
-            // 
-            this.cmbcodigoModificar.FormattingEnabled = true;
-            this.cmbcodigoModificar.Location = new System.Drawing.Point(95, 24);
-            this.cmbcodigoModificar.Name = "cmbcodigoModificar";
-            this.cmbcodigoModificar.Size = new System.Drawing.Size(178, 21);
-            this.cmbcodigoModificar.TabIndex = 225;
-            this.cmbcodigoModificar.Text = "Seleccione Código a Modificar";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(15, 19);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(74, 19);
-            this.label13.TabIndex = 224;
-            this.label13.Text = "Modificar:";
+            this.tabPage2.Controls.Add(this.tabControl2);
+            this.tabPage2.Controls.Add(this.btnbuscarCodModificar);
+            this.tabPage2.Controls.Add(this.cmbcodigoModificar);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(648, 298);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Datos Adicionales";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabControl2
             // 
@@ -394,230 +382,26 @@
             this.tabPage3.Text = "Teléfono";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // label15
             // 
-            this.tabPage4.Controls.Add(this.txtCorreoPasajero);
-            this.tabPage4.Controls.Add(this.label2);
-            this.tabPage4.Controls.Add(this.radeliminarCorreo);
-            this.tabPage4.Controls.Add(this.radmodificarCorreo);
-            this.tabPage4.Controls.Add(this.radnuevoCorreo);
-            this.tabPage4.Controls.Add(this.label14);
-            this.tabPage4.Controls.Add(this.cmbcorreosPasajero);
-            this.tabPage4.Controls.Add(this.btnmodificarCorreo);
-            this.tabPage4.Controls.Add(this.btneliminarCorreo);
-            this.tabPage4.Controls.Add(this.btnagregarCorreo);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(601, 187);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Correo";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(54, 83);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(69, 19);
+            this.label15.TabIndex = 248;
+            this.label15.Text = "Teléfono:";
+            this.label15.Visible = false;
             // 
-            // txtTelefonoPasajero
+            // cmbtelefonosPasajero
             // 
-            this.txtTelefonoPasajero.Location = new System.Drawing.Point(176, 55);
-            this.txtTelefonoPasajero.Mask = "00000000";
-            this.txtTelefonoPasajero.Name = "txtTelefonoPasajero";
-            this.txtTelefonoPasajero.Size = new System.Drawing.Size(211, 20);
-            this.txtTelefonoPasajero.TabIndex = 224;
-            this.txtTelefonoPasajero.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(54, 55);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 19);
-            this.label8.TabIndex = 226;
-            this.label8.Text = "Teléfono:";
-            this.label8.Visible = false;
-            // 
-            // sALIRToolStripMenuItem
-            // 
-            this.sALIRToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.sALIRToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sALIRToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sALIRToolStripMenuItem.Image")));
-            this.sALIRToolStripMenuItem.Name = "sALIRToolStripMenuItem";
-            this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(73, 23);
-            this.sALIRToolStripMenuItem.Text = "SALIR";
-            this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
-            // 
-            // btnBuscarPasajero
-            // 
-            this.btnBuscarPasajero.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarPasajero.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarPasajero.Image")));
-            this.btnBuscarPasajero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarPasajero.Location = new System.Drawing.Point(424, 12);
-            this.btnBuscarPasajero.Name = "btnBuscarPasajero";
-            this.btnBuscarPasajero.Size = new System.Drawing.Size(110, 50);
-            this.btnBuscarPasajero.TabIndex = 215;
-            this.btnBuscarPasajero.Text = "Buscar";
-            this.btnBuscarPasajero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarPasajero.UseVisualStyleBackColor = true;
-            this.btnBuscarPasajero.Click += new System.EventHandler(this.btnBuscarPasajero_Click);
-            // 
-            // btnGuardarPasajero
-            // 
-            this.btnGuardarPasajero.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarPasajero.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarPasajero.Image")));
-            this.btnGuardarPasajero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarPasajero.Location = new System.Drawing.Point(516, 99);
-            this.btnGuardarPasajero.Name = "btnGuardarPasajero";
-            this.btnGuardarPasajero.Size = new System.Drawing.Size(110, 50);
-            this.btnGuardarPasajero.TabIndex = 214;
-            this.btnGuardarPasajero.Text = "Guardar";
-            this.btnGuardarPasajero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardarPasajero.UseVisualStyleBackColor = true;
-            this.btnGuardarPasajero.Click += new System.EventHandler(this.btnGuardarPasajero_Click);
-            // 
-            // btnagregarCorreo
-            // 
-            this.btnagregarCorreo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregarCorreo.Image = global::Aerolinea.Properties.Resources.agregar_correo;
-            this.btnagregarCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnagregarCorreo.Location = new System.Drawing.Point(471, 15);
-            this.btnagregarCorreo.Name = "btnagregarCorreo";
-            this.btnagregarCorreo.Size = new System.Drawing.Size(110, 50);
-            this.btnagregarCorreo.TabIndex = 233;
-            this.btnagregarCorreo.Text = " Correo";
-            this.btnagregarCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnagregarCorreo.UseVisualStyleBackColor = true;
-            this.btnagregarCorreo.Visible = false;
-            this.btnagregarCorreo.Click += new System.EventHandler(this.btnagregarCorreo_Click);
-            // 
-            // btnbuscarCodModificar
-            // 
-            this.btnbuscarCodModificar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbuscarCodModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscarCodModificar.Image")));
-            this.btnbuscarCodModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbuscarCodModificar.Location = new System.Drawing.Point(322, 8);
-            this.btnbuscarCodModificar.Name = "btnbuscarCodModificar";
-            this.btnbuscarCodModificar.Size = new System.Drawing.Size(110, 50);
-            this.btnbuscarCodModificar.TabIndex = 226;
-            this.btnbuscarCodModificar.Text = "Buscar";
-            this.btnbuscarCodModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbuscarCodModificar.UseVisualStyleBackColor = true;
-            this.btnbuscarCodModificar.Click += new System.EventHandler(this.btnbuscarCodModificar_Click);
-            // 
-            // btneliminarCorreo
-            // 
-            this.btneliminarCorreo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminarCorreo.Image = global::Aerolinea.Properties.Resources.eliminar_correo;
-            this.btneliminarCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btneliminarCorreo.Location = new System.Drawing.Point(471, 126);
-            this.btneliminarCorreo.Name = "btneliminarCorreo";
-            this.btneliminarCorreo.Size = new System.Drawing.Size(110, 50);
-            this.btneliminarCorreo.TabIndex = 234;
-            this.btneliminarCorreo.Text = "Correo";
-            this.btneliminarCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btneliminarCorreo.UseVisualStyleBackColor = true;
-            this.btneliminarCorreo.Visible = false;
-            this.btneliminarCorreo.Click += new System.EventHandler(this.btneliminarCorreo_Click);
-            // 
-            // btnmodificarCorreo
-            // 
-            this.btnmodificarCorreo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodificarCorreo.Image = global::Aerolinea.Properties.Resources.modificar_correo;
-            this.btnmodificarCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnmodificarCorreo.Location = new System.Drawing.Point(471, 70);
-            this.btnmodificarCorreo.Name = "btnmodificarCorreo";
-            this.btnmodificarCorreo.Size = new System.Drawing.Size(110, 50);
-            this.btnmodificarCorreo.TabIndex = 235;
-            this.btnmodificarCorreo.Text = "Correo";
-            this.btnmodificarCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnmodificarCorreo.UseVisualStyleBackColor = true;
-            this.btnmodificarCorreo.Visible = false;
-            this.btnmodificarCorreo.Click += new System.EventHandler(this.btnmodificarCorreo_Click);
-            // 
-            // cmbcorreosPasajero
-            // 
-            this.cmbcorreosPasajero.FormattingEnabled = true;
-            this.cmbcorreosPasajero.Location = new System.Drawing.Point(195, 101);
-            this.cmbcorreosPasajero.Name = "cmbcorreosPasajero";
-            this.cmbcorreosPasajero.Size = new System.Drawing.Size(209, 21);
-            this.cmbcorreosPasajero.TabIndex = 236;
-            this.cmbcorreosPasajero.Visible = false;
-            this.cmbcorreosPasajero.SelectedIndexChanged += new System.EventHandler(this.cmbcorreosPasajero_SelectedIndexChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(57, 103);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(132, 19);
-            this.label14.TabIndex = 237;
-            this.label14.Text = "Correo Electrónico:";
-            this.label14.Visible = false;
-            // 
-            // radnuevoCorreo
-            // 
-            this.radnuevoCorreo.AutoSize = true;
-            this.radnuevoCorreo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radnuevoCorreo.Location = new System.Drawing.Point(44, 15);
-            this.radnuevoCorreo.Name = "radnuevoCorreo";
-            this.radnuevoCorreo.Size = new System.Drawing.Size(115, 23);
-            this.radnuevoCorreo.TabIndex = 238;
-            this.radnuevoCorreo.TabStop = true;
-            this.radnuevoCorreo.Text = "Nuevo Correo";
-            this.radnuevoCorreo.UseVisualStyleBackColor = true;
-            this.radnuevoCorreo.CheckedChanged += new System.EventHandler(this.radnuevoCorreo_CheckedChanged);
-            // 
-            // radmodificarCorreo
-            // 
-            this.radmodificarCorreo.AutoSize = true;
-            this.radmodificarCorreo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radmodificarCorreo.Location = new System.Drawing.Point(165, 15);
-            this.radmodificarCorreo.Name = "radmodificarCorreo";
-            this.radmodificarCorreo.Size = new System.Drawing.Size(135, 23);
-            this.radmodificarCorreo.TabIndex = 239;
-            this.radmodificarCorreo.TabStop = true;
-            this.radmodificarCorreo.Text = "Modificar Correo";
-            this.radmodificarCorreo.UseVisualStyleBackColor = true;
-            this.radmodificarCorreo.CheckedChanged += new System.EventHandler(this.radmodificarCorreo_CheckedChanged);
-            // 
-            // radeliminarCorreo
-            // 
-            this.radeliminarCorreo.AutoSize = true;
-            this.radeliminarCorreo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radeliminarCorreo.Location = new System.Drawing.Point(299, 15);
-            this.radeliminarCorreo.Name = "radeliminarCorreo";
-            this.radeliminarCorreo.Size = new System.Drawing.Size(127, 23);
-            this.radeliminarCorreo.TabIndex = 240;
-            this.radeliminarCorreo.TabStop = true;
-            this.radeliminarCorreo.Text = "Eliminar Correo";
-            this.radeliminarCorreo.UseVisualStyleBackColor = true;
-            this.radeliminarCorreo.CheckedChanged += new System.EventHandler(this.radeliminarCorreo_CheckedChanged);
-            // 
-            // txtCorreoPasajero
-            // 
-            this.txtCorreoPasajero.Location = new System.Drawing.Point(193, 71);
-            this.txtCorreoPasajero.Name = "txtCorreoPasajero";
-            this.txtCorreoPasajero.Size = new System.Drawing.Size(235, 20);
-            this.txtCorreoPasajero.TabIndex = 241;
-            this.txtCorreoPasajero.Visible = false;
-            this.txtCorreoPasajero.WordWrap = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 19);
-            this.label2.TabIndex = 242;
-            this.label2.Text = "Nuevo Correo Electrónico:";
-            this.label2.Visible = false;
-            // 
-            // rEFRESCARToolStripMenuItem
-            // 
-            this.rEFRESCARToolStripMenuItem.Image = global::Aerolinea.Properties.Resources.refresh;
-            this.rEFRESCARToolStripMenuItem.Name = "rEFRESCARToolStripMenuItem";
-            this.rEFRESCARToolStripMenuItem.Size = new System.Drawing.Size(99, 23);
-            this.rEFRESCARToolStripMenuItem.Text = "REFRESCAR ";
-            this.rEFRESCARToolStripMenuItem.Click += new System.EventHandler(this.rEFRESCARToolStripMenuItem_Click);
+            this.cmbtelefonosPasajero.FormattingEnabled = true;
+            this.cmbtelefonosPasajero.Location = new System.Drawing.Point(176, 81);
+            this.cmbtelefonosPasajero.Name = "cmbtelefonosPasajero";
+            this.cmbtelefonosPasajero.Size = new System.Drawing.Size(209, 21);
+            this.cmbtelefonosPasajero.TabIndex = 247;
+            this.cmbtelefonosPasajero.Visible = false;
+            this.cmbtelefonosPasajero.SelectedIndexChanged += new System.EventHandler(this.cmbtelefonosPasajero_SelectedIndexChanged);
             // 
             // radeliminarTelefono
             // 
@@ -703,33 +487,249 @@
             this.btnnuevoTelefono.Visible = false;
             this.btnnuevoTelefono.Click += new System.EventHandler(this.btnnuevoTelefono_Click);
             // 
-            // cmbtelefonosPasajero
+            // txtTelefonoPasajero
             // 
-            this.cmbtelefonosPasajero.FormattingEnabled = true;
-            this.cmbtelefonosPasajero.Location = new System.Drawing.Point(176, 81);
-            this.cmbtelefonosPasajero.Name = "cmbtelefonosPasajero";
-            this.cmbtelefonosPasajero.Size = new System.Drawing.Size(209, 21);
-            this.cmbtelefonosPasajero.TabIndex = 247;
-            this.cmbtelefonosPasajero.Visible = false;
-            this.cmbtelefonosPasajero.SelectedIndexChanged += new System.EventHandler(this.cmbtelefonosPasajero_SelectedIndexChanged);
+            this.txtTelefonoPasajero.Location = new System.Drawing.Point(176, 55);
+            this.txtTelefonoPasajero.Mask = "00000000";
+            this.txtTelefonoPasajero.Name = "txtTelefonoPasajero";
+            this.txtTelefonoPasajero.Size = new System.Drawing.Size(211, 20);
+            this.txtTelefonoPasajero.TabIndex = 224;
+            this.txtTelefonoPasajero.Visible = false;
             // 
-            // label15
+            // label8
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(54, 83);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 19);
-            this.label15.TabIndex = 248;
-            this.label15.Text = "Teléfono:";
-            this.label15.Visible = false;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(54, 55);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 19);
+            this.label8.TabIndex = 226;
+            this.label8.Text = "Teléfono:";
+            this.label8.Visible = false;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.txtCorreoPasajero);
+            this.tabPage4.Controls.Add(this.label2);
+            this.tabPage4.Controls.Add(this.radeliminarCorreo);
+            this.tabPage4.Controls.Add(this.radmodificarCorreo);
+            this.tabPage4.Controls.Add(this.radnuevoCorreo);
+            this.tabPage4.Controls.Add(this.label14);
+            this.tabPage4.Controls.Add(this.cmbcorreosPasajero);
+            this.tabPage4.Controls.Add(this.btnmodificarCorreo);
+            this.tabPage4.Controls.Add(this.btneliminarCorreo);
+            this.tabPage4.Controls.Add(this.btnagregarCorreo);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(601, 187);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Correo";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // txtCorreoPasajero
+            // 
+            this.txtCorreoPasajero.Location = new System.Drawing.Point(193, 71);
+            this.txtCorreoPasajero.Name = "txtCorreoPasajero";
+            this.txtCorreoPasajero.Size = new System.Drawing.Size(235, 20);
+            this.txtCorreoPasajero.TabIndex = 241;
+            this.txtCorreoPasajero.Visible = false;
+            this.txtCorreoPasajero.WordWrap = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 19);
+            this.label2.TabIndex = 242;
+            this.label2.Text = "Nuevo Correo Electrónico:";
+            this.label2.Visible = false;
+            // 
+            // radeliminarCorreo
+            // 
+            this.radeliminarCorreo.AutoSize = true;
+            this.radeliminarCorreo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radeliminarCorreo.Location = new System.Drawing.Point(299, 15);
+            this.radeliminarCorreo.Name = "radeliminarCorreo";
+            this.radeliminarCorreo.Size = new System.Drawing.Size(127, 23);
+            this.radeliminarCorreo.TabIndex = 240;
+            this.radeliminarCorreo.TabStop = true;
+            this.radeliminarCorreo.Text = "Eliminar Correo";
+            this.radeliminarCorreo.UseVisualStyleBackColor = true;
+            this.radeliminarCorreo.CheckedChanged += new System.EventHandler(this.radeliminarCorreo_CheckedChanged);
+            // 
+            // radmodificarCorreo
+            // 
+            this.radmodificarCorreo.AutoSize = true;
+            this.radmodificarCorreo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radmodificarCorreo.Location = new System.Drawing.Point(165, 15);
+            this.radmodificarCorreo.Name = "radmodificarCorreo";
+            this.radmodificarCorreo.Size = new System.Drawing.Size(135, 23);
+            this.radmodificarCorreo.TabIndex = 239;
+            this.radmodificarCorreo.TabStop = true;
+            this.radmodificarCorreo.Text = "Modificar Correo";
+            this.radmodificarCorreo.UseVisualStyleBackColor = true;
+            this.radmodificarCorreo.CheckedChanged += new System.EventHandler(this.radmodificarCorreo_CheckedChanged);
+            // 
+            // radnuevoCorreo
+            // 
+            this.radnuevoCorreo.AutoSize = true;
+            this.radnuevoCorreo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radnuevoCorreo.Location = new System.Drawing.Point(44, 15);
+            this.radnuevoCorreo.Name = "radnuevoCorreo";
+            this.radnuevoCorreo.Size = new System.Drawing.Size(115, 23);
+            this.radnuevoCorreo.TabIndex = 238;
+            this.radnuevoCorreo.TabStop = true;
+            this.radnuevoCorreo.Text = "Nuevo Correo";
+            this.radnuevoCorreo.UseVisualStyleBackColor = true;
+            this.radnuevoCorreo.CheckedChanged += new System.EventHandler(this.radnuevoCorreo_CheckedChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(57, 103);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(132, 19);
+            this.label14.TabIndex = 237;
+            this.label14.Text = "Correo Electrónico:";
+            this.label14.Visible = false;
+            // 
+            // cmbcorreosPasajero
+            // 
+            this.cmbcorreosPasajero.FormattingEnabled = true;
+            this.cmbcorreosPasajero.Location = new System.Drawing.Point(195, 101);
+            this.cmbcorreosPasajero.Name = "cmbcorreosPasajero";
+            this.cmbcorreosPasajero.Size = new System.Drawing.Size(209, 21);
+            this.cmbcorreosPasajero.TabIndex = 236;
+            this.cmbcorreosPasajero.Visible = false;
+            this.cmbcorreosPasajero.SelectedIndexChanged += new System.EventHandler(this.cmbcorreosPasajero_SelectedIndexChanged);
+            // 
+            // btnmodificarCorreo
+            // 
+            this.btnmodificarCorreo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmodificarCorreo.Image = global::Aerolinea.Properties.Resources.modificar_correo;
+            this.btnmodificarCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnmodificarCorreo.Location = new System.Drawing.Point(471, 70);
+            this.btnmodificarCorreo.Name = "btnmodificarCorreo";
+            this.btnmodificarCorreo.Size = new System.Drawing.Size(110, 50);
+            this.btnmodificarCorreo.TabIndex = 235;
+            this.btnmodificarCorreo.Text = "Correo";
+            this.btnmodificarCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnmodificarCorreo.UseVisualStyleBackColor = true;
+            this.btnmodificarCorreo.Visible = false;
+            this.btnmodificarCorreo.Click += new System.EventHandler(this.btnmodificarCorreo_Click);
+            // 
+            // btneliminarCorreo
+            // 
+            this.btneliminarCorreo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminarCorreo.Image = global::Aerolinea.Properties.Resources.eliminar_correo;
+            this.btneliminarCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btneliminarCorreo.Location = new System.Drawing.Point(471, 126);
+            this.btneliminarCorreo.Name = "btneliminarCorreo";
+            this.btneliminarCorreo.Size = new System.Drawing.Size(110, 50);
+            this.btneliminarCorreo.TabIndex = 234;
+            this.btneliminarCorreo.Text = "Correo";
+            this.btneliminarCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btneliminarCorreo.UseVisualStyleBackColor = true;
+            this.btneliminarCorreo.Visible = false;
+            this.btneliminarCorreo.Click += new System.EventHandler(this.btneliminarCorreo_Click);
+            // 
+            // btnagregarCorreo
+            // 
+            this.btnagregarCorreo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregarCorreo.Image = global::Aerolinea.Properties.Resources.agregar_correo;
+            this.btnagregarCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnagregarCorreo.Location = new System.Drawing.Point(471, 15);
+            this.btnagregarCorreo.Name = "btnagregarCorreo";
+            this.btnagregarCorreo.Size = new System.Drawing.Size(110, 50);
+            this.btnagregarCorreo.TabIndex = 233;
+            this.btnagregarCorreo.Text = " Correo";
+            this.btnagregarCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnagregarCorreo.UseVisualStyleBackColor = true;
+            this.btnagregarCorreo.Visible = false;
+            this.btnagregarCorreo.Click += new System.EventHandler(this.btnagregarCorreo_Click);
+            // 
+            // btnbuscarCodModificar
+            // 
+            this.btnbuscarCodModificar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbuscarCodModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscarCodModificar.Image")));
+            this.btnbuscarCodModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbuscarCodModificar.Location = new System.Drawing.Point(322, 8);
+            this.btnbuscarCodModificar.Name = "btnbuscarCodModificar";
+            this.btnbuscarCodModificar.Size = new System.Drawing.Size(110, 50);
+            this.btnbuscarCodModificar.TabIndex = 226;
+            this.btnbuscarCodModificar.Text = "Buscar";
+            this.btnbuscarCodModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbuscarCodModificar.UseVisualStyleBackColor = true;
+            this.btnbuscarCodModificar.Click += new System.EventHandler(this.btnbuscarCodModificar_Click);
+            // 
+            // cmbcodigoModificar
+            // 
+            this.cmbcodigoModificar.FormattingEnabled = true;
+            this.cmbcodigoModificar.Location = new System.Drawing.Point(95, 24);
+            this.cmbcodigoModificar.Name = "cmbcodigoModificar";
+            this.cmbcodigoModificar.Size = new System.Drawing.Size(178, 21);
+            this.cmbcodigoModificar.TabIndex = 225;
+            this.cmbcodigoModificar.Text = "Seleccione Código a Modificar";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(15, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(74, 19);
+            this.label13.TabIndex = 224;
+            this.label13.Text = "Modificar:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(234, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(155, 23);
+            this.label1.TabIndex = 127;
+            this.label1.Text = "Modificar Pasajero";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sALIRToolStripMenuItem,
+            this.rEFRESCARToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(692, 27);
+            this.menuStrip1.TabIndex = 188;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // sALIRToolStripMenuItem
+            // 
+            this.sALIRToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.sALIRToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sALIRToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sALIRToolStripMenuItem.Image")));
+            this.sALIRToolStripMenuItem.Name = "sALIRToolStripMenuItem";
+            this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(73, 23);
+            this.sALIRToolStripMenuItem.Text = "SALIR";
+            this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
+            // 
+            // rEFRESCARToolStripMenuItem
+            // 
+            this.rEFRESCARToolStripMenuItem.Image = global::Aerolinea.Properties.Resources.refresh;
+            this.rEFRESCARToolStripMenuItem.Name = "rEFRESCARToolStripMenuItem";
+            this.rEFRESCARToolStripMenuItem.Size = new System.Drawing.Size(99, 23);
+            this.rEFRESCARToolStripMenuItem.Text = "REFRESCAR ";
+            this.rEFRESCARToolStripMenuItem.Click += new System.EventHandler(this.rEFRESCARToolStripMenuItem_Click);
             // 
             // frmmodificarPasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(692, 412);
+            this.ClientSize = new System.Drawing.Size(692, 435);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
@@ -745,13 +745,13 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

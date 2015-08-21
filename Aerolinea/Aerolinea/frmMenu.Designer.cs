@@ -39,10 +39,9 @@
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aYUDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasajerosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.vuelosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reservacionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cERRARSESSIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -146,22 +145,21 @@
             // rEPORTESToolStripMenuItem
             // 
             this.rEPORTESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pasajerosToolStripMenuItem1,
+            this.usuariosToolStripMenuItem1,
             this.vuelosToolStripMenuItem1,
-            this.reservacionesToolStripMenuItem1,
-            this.pagosToolStripMenuItem1});
+            this.reservacionesToolStripMenuItem1});
             this.rEPORTESToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 12F);
             this.rEPORTESToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("rEPORTESToolStripMenuItem.Image")));
             this.rEPORTESToolStripMenuItem.Name = "rEPORTESToolStripMenuItem";
             this.rEPORTESToolStripMenuItem.Size = new System.Drawing.Size(105, 23);
             this.rEPORTESToolStripMenuItem.Text = "REPORTES";
             // 
-            // pasajerosToolStripMenuItem1
+            // usuariosToolStripMenuItem1
             // 
-            this.pasajerosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("pasajerosToolStripMenuItem1.Image")));
-            this.pasajerosToolStripMenuItem1.Name = "pasajerosToolStripMenuItem1";
-            this.pasajerosToolStripMenuItem1.Size = new System.Drawing.Size(172, 24);
-            this.pasajerosToolStripMenuItem1.Text = "Pasajeros";
+            this.usuariosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("usuariosToolStripMenuItem1.Image")));
+            this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(172, 24);
+            this.usuariosToolStripMenuItem1.Text = "Usuarios";
             // 
             // vuelosToolStripMenuItem1
             // 
@@ -176,13 +174,6 @@
             this.reservacionesToolStripMenuItem1.Name = "reservacionesToolStripMenuItem1";
             this.reservacionesToolStripMenuItem1.Size = new System.Drawing.Size(172, 24);
             this.reservacionesToolStripMenuItem1.Text = "Reservaciones";
-            // 
-            // pagosToolStripMenuItem1
-            // 
-            this.pagosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("pagosToolStripMenuItem1.Image")));
-            this.pagosToolStripMenuItem1.Name = "pagosToolStripMenuItem1";
-            this.pagosToolStripMenuItem1.Size = new System.Drawing.Size(172, 24);
-            this.pagosToolStripMenuItem1.Text = "Pagos";
             // 
             // cERRARSESSIONToolStripMenuItem
             // 
@@ -266,10 +257,9 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem pasajerosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem vuelosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reservacionesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem rEGISTROAVIONESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aSIGNACIÓNVUELOSToolStripMenuItem;
