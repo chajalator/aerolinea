@@ -33,6 +33,9 @@
             this.aGREGARLOCALIZACIÓNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefrescar = new System.Windows.Forms.Button();
+            this.cmbeliminarVuelo = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.cmbaeropuerto = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmborigen = new System.Windows.Forms.ComboBox();
@@ -50,7 +53,6 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.grdVuelo = new System.Windows.Forms.DataGridView();
             this.btnEliminarVuelo = new System.Windows.Forms.Button();
-            this.btnRefrescar = new System.Windows.Forms.Button();
             this.btnBuscarVuelo = new System.Windows.Forms.Button();
             this.btnGuardarVuelo = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmbaerolinea = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cmbeliminarVuelo = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVuelo)).BeginInit();
@@ -100,6 +100,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRefrescar);
             this.groupBox1.Controls.Add(this.cmbeliminarVuelo);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.cmbaeropuerto);
@@ -119,7 +120,6 @@
             this.groupBox1.Controls.Add(this.txtBuscar);
             this.groupBox1.Controls.Add(this.grdVuelo);
             this.groupBox1.Controls.Add(this.btnEliminarVuelo);
-            this.groupBox1.Controls.Add(this.btnRefrescar);
             this.groupBox1.Controls.Add(this.btnBuscarVuelo);
             this.groupBox1.Controls.Add(this.btnGuardarVuelo);
             this.groupBox1.Controls.Add(this.label11);
@@ -138,13 +138,46 @@
             this.groupBox1.Text = "Asignar Vuelo";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRefrescar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefrescar.Image = global::Aerolinea.Properties.Resources.refresh;
+            this.btnRefrescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefrescar.Location = new System.Drawing.Point(558, 128);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(100, 50);
+            this.btnRefrescar.TabIndex = 137;
+            this.btnRefrescar.Text = "Refrescar";
+            this.btnRefrescar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefrescar.UseVisualStyleBackColor = false;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
+            // cmbeliminarVuelo
+            // 
+            this.cmbeliminarVuelo.FormattingEnabled = true;
+            this.cmbeliminarVuelo.Location = new System.Drawing.Point(398, 226);
+            this.cmbeliminarVuelo.Name = "cmbeliminarVuelo";
+            this.cmbeliminarVuelo.Size = new System.Drawing.Size(121, 21);
+            this.cmbeliminarVuelo.TabIndex = 138;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(330, 226);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(62, 19);
+            this.label13.TabIndex = 170;
+            this.label13.Text = "Eliminar";
+            // 
             // cmbaeropuerto
             // 
             this.cmbaeropuerto.FormattingEnabled = true;
             this.cmbaeropuerto.Location = new System.Drawing.Point(363, 185);
             this.cmbaeropuerto.Name = "cmbaeropuerto";
             this.cmbaeropuerto.Size = new System.Drawing.Size(121, 21);
-            this.cmbaeropuerto.TabIndex = 128;
+            this.cmbaeropuerto.TabIndex = 133;
             // 
             // label6
             // 
@@ -162,7 +195,7 @@
             this.cmborigen.Location = new System.Drawing.Point(133, 155);
             this.cmborigen.Name = "cmborigen";
             this.cmborigen.Size = new System.Drawing.Size(121, 21);
-            this.cmborigen.TabIndex = 126;
+            this.cmborigen.TabIndex = 131;
             // 
             // label5
             // 
@@ -191,7 +224,7 @@
             this.cmbembarque.Location = new System.Drawing.Point(290, 101);
             this.cmbembarque.Name = "cmbembarque";
             this.cmbembarque.Size = new System.Drawing.Size(43, 21);
-            this.cmbembarque.TabIndex = 123;
+            this.cmbembarque.TabIndex = 128;
             // 
             // label4
             // 
@@ -220,7 +253,7 @@
             this.cmbterminal.Location = new System.Drawing.Point(133, 101);
             this.cmbterminal.Name = "cmbterminal";
             this.cmbterminal.Size = new System.Drawing.Size(43, 21);
-            this.cmbterminal.TabIndex = 122;
+            this.cmbterminal.TabIndex = 127;
             // 
             // label3
             // 
@@ -238,7 +271,7 @@
             this.cmbtipoVuelo.Location = new System.Drawing.Point(351, 128);
             this.cmbtipoVuelo.Name = "cmbtipoVuelo";
             this.cmbtipoVuelo.Size = new System.Drawing.Size(121, 21);
-            this.cmbtipoVuelo.TabIndex = 125;
+            this.cmbtipoVuelo.TabIndex = 130;
             // 
             // cmbdestino
             // 
@@ -246,7 +279,7 @@
             this.cmbdestino.Location = new System.Drawing.Point(133, 183);
             this.cmbdestino.Name = "cmbdestino";
             this.cmbdestino.Size = new System.Drawing.Size(121, 21);
-            this.cmbdestino.TabIndex = 127;
+            this.cmbdestino.TabIndex = 132;
             this.cmbdestino.SelectedIndexChanged += new System.EventHandler(this.cmbdestino_SelectedIndexChanged);
             // 
             // label2
@@ -265,7 +298,7 @@
             this.mtxhoraLlegada.Mask = "0000/00/00 00:00";
             this.mtxhoraLlegada.Name = "mtxhoraLlegada";
             this.mtxhoraLlegada.Size = new System.Drawing.Size(100, 20);
-            this.mtxhoraLlegada.TabIndex = 121;
+            this.mtxhoraLlegada.TabIndex = 126;
             // 
             // mtxhoraDespegue
             // 
@@ -273,7 +306,7 @@
             this.mtxhoraDespegue.Mask = "0000/00/00 00:00";
             this.mtxhoraDespegue.Name = "mtxhoraDespegue";
             this.mtxhoraDespegue.Size = new System.Drawing.Size(100, 20);
-            this.mtxhoraDespegue.TabIndex = 120;
+            this.mtxhoraDespegue.TabIndex = 125;
             // 
             // label12
             // 
@@ -289,8 +322,8 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(108, 227);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(192, 20);
-            this.txtBuscar.TabIndex = 130;
+            this.txtBuscar.Size = new System.Drawing.Size(202, 20);
+            this.txtBuscar.TabIndex = 135;
             // 
             // grdVuelo
             // 
@@ -310,26 +343,11 @@
             this.btnEliminarVuelo.Location = new System.Drawing.Point(558, 182);
             this.btnEliminarVuelo.Name = "btnEliminarVuelo";
             this.btnEliminarVuelo.Size = new System.Drawing.Size(100, 50);
-            this.btnEliminarVuelo.TabIndex = 132;
+            this.btnEliminarVuelo.TabIndex = 139;
             this.btnEliminarVuelo.Text = "Eliminar";
             this.btnEliminarVuelo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminarVuelo.UseVisualStyleBackColor = false;
-            this.btnEliminarVuelo.Click += new System.EventHandler(this.btnEliminarVuelo_Click);
-            // 
-            // btnRefrescar
-            // 
-            this.btnRefrescar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnRefrescar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefrescar.Image = global::Aerolinea.Properties.Resources.refresh;
-            this.btnRefrescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefrescar.Location = new System.Drawing.Point(558, 126);
-            this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.Size = new System.Drawing.Size(100, 50);
-            this.btnRefrescar.TabIndex = 144;
-            this.btnRefrescar.Text = "Refrescar";
-            this.btnRefrescar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefrescar.UseVisualStyleBackColor = false;
-            this.btnRefrescar.Click += new System.EventHandler(this.btnModificarVuelo_Click);
+            this.btnEliminarVuelo.Click += new System.EventHandler(this.btnEliminarVuelo_Click_1);
             // 
             // btnBuscarVuelo
             // 
@@ -340,7 +358,7 @@
             this.btnBuscarVuelo.Location = new System.Drawing.Point(558, 72);
             this.btnBuscarVuelo.Name = "btnBuscarVuelo";
             this.btnBuscarVuelo.Size = new System.Drawing.Size(100, 50);
-            this.btnBuscarVuelo.TabIndex = 131;
+            this.btnBuscarVuelo.TabIndex = 136;
             this.btnBuscarVuelo.Text = "Buscar";
             this.btnBuscarVuelo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarVuelo.UseVisualStyleBackColor = false;
@@ -355,7 +373,7 @@
             this.btnGuardarVuelo.Location = new System.Drawing.Point(558, 16);
             this.btnGuardarVuelo.Name = "btnGuardarVuelo";
             this.btnGuardarVuelo.Size = new System.Drawing.Size(100, 50);
-            this.btnGuardarVuelo.TabIndex = 129;
+            this.btnGuardarVuelo.TabIndex = 134;
             this.btnGuardarVuelo.Text = "Guardar";
             this.btnGuardarVuelo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardarVuelo.UseVisualStyleBackColor = false;
@@ -426,7 +444,7 @@
             this.cmbaerolinea.Location = new System.Drawing.Point(133, 128);
             this.cmbaerolinea.Name = "cmbaerolinea";
             this.cmbaerolinea.Size = new System.Drawing.Size(121, 21);
-            this.cmbaerolinea.TabIndex = 124;
+            this.cmbaerolinea.TabIndex = 128;
             // 
             // label1
             // 
@@ -437,24 +455,6 @@
             this.label1.Size = new System.Drawing.Size(172, 23);
             this.label1.TabIndex = 146;
             this.label1.Text = "Asignacion de Vuelos";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(340, 226);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(62, 19);
-            this.label13.TabIndex = 168;
-            this.label13.Text = "Eliminar";
-            // 
-            // cmbeliminarVuelo
-            // 
-            this.cmbeliminarVuelo.FormattingEnabled = true;
-            this.cmbeliminarVuelo.Location = new System.Drawing.Point(408, 226);
-            this.cmbeliminarVuelo.Name = "cmbeliminarVuelo";
-            this.cmbeliminarVuelo.Size = new System.Drawing.Size(121, 21);
-            this.cmbeliminarVuelo.TabIndex = 169;
             // 
             // frmcontrolVuelo
             // 
@@ -497,7 +497,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridView grdVuelo;
         private System.Windows.Forms.Button btnEliminarVuelo;
-        private System.Windows.Forms.Button btnRefrescar;
         private System.Windows.Forms.Button btnBuscarVuelo;
         private System.Windows.Forms.Button btnGuardarVuelo;
         private System.Windows.Forms.Label label11;
@@ -520,5 +519,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbeliminarVuelo;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnRefrescar;
     }
 }

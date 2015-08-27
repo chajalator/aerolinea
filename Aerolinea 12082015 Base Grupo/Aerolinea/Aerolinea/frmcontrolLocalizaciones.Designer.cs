@@ -69,7 +69,7 @@
             this.rEGRESARToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(789, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(680, 27);
             this.menuStrip1.TabIndex = 172;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -89,7 +89,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(10, 61);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(543, 174);
+            this.groupBox2.Size = new System.Drawing.Size(408, 174);
             this.groupBox2.TabIndex = 181;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta Localizaciones";
@@ -98,13 +98,13 @@
             // 
             this.txtBuscarLocalizacion.Location = new System.Drawing.Point(71, 26);
             this.txtBuscarLocalizacion.Name = "txtBuscarLocalizacion";
-            this.txtBuscarLocalizacion.Size = new System.Drawing.Size(434, 20);
+            this.txtBuscarLocalizacion.Size = new System.Drawing.Size(289, 20);
             this.txtBuscarLocalizacion.TabIndex = 3;
             // 
             // grdLocacion
             // 
             this.grdLocacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdLocacion.Location = new System.Drawing.Point(131, 52);
+            this.grdLocacion.Location = new System.Drawing.Point(68, 52);
             this.grdLocacion.Name = "grdLocacion";
             this.grdLocacion.Size = new System.Drawing.Size(296, 116);
             this.grdLocacion.TabIndex = 185;
@@ -125,7 +125,7 @@
             this.groupBox1.Controls.Add(this.tabLocalizacion);
             this.groupBox1.Location = new System.Drawing.Point(29, 30);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(625, 305);
+            this.groupBox1.Size = new System.Drawing.Size(499, 305);
             this.groupBox1.TabIndex = 180;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Localización";
@@ -137,7 +137,7 @@
             this.tabLocalizacion.Location = new System.Drawing.Point(20, 22);
             this.tabLocalizacion.Name = "tabLocalizacion";
             this.tabLocalizacion.SelectedIndex = 0;
-            this.tabLocalizacion.Size = new System.Drawing.Size(586, 278);
+            this.tabLocalizacion.Size = new System.Drawing.Size(456, 278);
             this.tabLocalizacion.TabIndex = 0;
             // 
             // tabpLocalizacion
@@ -149,7 +149,7 @@
             this.tabpLocalizacion.Location = new System.Drawing.Point(4, 22);
             this.tabpLocalizacion.Name = "tabpLocalizacion";
             this.tabpLocalizacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpLocalizacion.Size = new System.Drawing.Size(578, 252);
+            this.tabpLocalizacion.Size = new System.Drawing.Size(448, 252);
             this.tabpLocalizacion.TabIndex = 0;
             this.tabpLocalizacion.Text = "Localización";
             this.tabpLocalizacion.UseVisualStyleBackColor = true;
@@ -159,7 +159,7 @@
             // 
             this.txtLugar.Location = new System.Drawing.Point(78, 10);
             this.txtLugar.Name = "txtLugar";
-            this.txtLugar.Size = new System.Drawing.Size(434, 20);
+            this.txtLugar.Size = new System.Drawing.Size(292, 20);
             this.txtLugar.TabIndex = 1;
             // 
             // label1
@@ -182,7 +182,7 @@
             this.tabpaeropuerto.Location = new System.Drawing.Point(4, 22);
             this.tabpaeropuerto.Name = "tabpaeropuerto";
             this.tabpaeropuerto.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpaeropuerto.Size = new System.Drawing.Size(578, 252);
+            this.tabpaeropuerto.Size = new System.Drawing.Size(448, 252);
             this.tabpaeropuerto.TabIndex = 1;
             this.tabpaeropuerto.Text = "Aeropuerto";
             this.tabpaeropuerto.UseVisualStyleBackColor = true;
@@ -210,7 +210,7 @@
             // 
             this.txtAeropuerto.Location = new System.Drawing.Point(127, 35);
             this.txtAeropuerto.Name = "txtAeropuerto";
-            this.txtAeropuerto.Size = new System.Drawing.Size(310, 20);
+            this.txtAeropuerto.Size = new System.Drawing.Size(290, 20);
             this.txtAeropuerto.TabIndex = 4;
             // 
             // label3
@@ -237,15 +237,15 @@
             // 
             // txtBuscarAeropuerto
             // 
-            this.txtBuscarAeropuerto.Location = new System.Drawing.Point(71, 26);
+            this.txtBuscarAeropuerto.Location = new System.Drawing.Point(79, 26);
             this.txtBuscarAeropuerto.Name = "txtBuscarAeropuerto";
-            this.txtBuscarAeropuerto.Size = new System.Drawing.Size(434, 20);
+            this.txtBuscarAeropuerto.Size = new System.Drawing.Size(347, 20);
             this.txtBuscarAeropuerto.TabIndex = 5;
             // 
             // grdAeropuerto
             // 
             this.grdAeropuerto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdAeropuerto.Location = new System.Drawing.Point(131, 52);
+            this.grdAeropuerto.Location = new System.Drawing.Point(66, 52);
             this.grdAeropuerto.Name = "grdAeropuerto";
             this.grdAeropuerto.Size = new System.Drawing.Size(296, 114);
             this.grdAeropuerto.TabIndex = 128;
@@ -267,7 +267,7 @@
             this.btnBuscarLocalización.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarLocalización.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarLocalización.Image")));
             this.btnBuscarLocalización.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarLocalización.Location = new System.Drawing.Point(673, 111);
+            this.btnBuscarLocalización.Location = new System.Drawing.Point(552, 110);
             this.btnBuscarLocalización.Name = "btnBuscarLocalización";
             this.btnBuscarLocalización.Size = new System.Drawing.Size(100, 50);
             this.btnBuscarLocalización.TabIndex = 183;
@@ -282,7 +282,7 @@
             this.btnGuardarAvion.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarAvion.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarAvion.Image")));
             this.btnGuardarAvion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarAvion.Location = new System.Drawing.Point(673, 55);
+            this.btnGuardarAvion.Location = new System.Drawing.Point(552, 54);
             this.btnGuardarAvion.Name = "btnGuardarAvion";
             this.btnGuardarAvion.Size = new System.Drawing.Size(100, 50);
             this.btnGuardarAvion.TabIndex = 182;
@@ -297,7 +297,7 @@
             this.btnRefrescar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefrescar.Image = global::Aerolinea.Properties.Resources.refresh;
             this.btnRefrescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefrescar.Location = new System.Drawing.Point(673, 167);
+            this.btnRefrescar.Location = new System.Drawing.Point(552, 166);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(100, 50);
             this.btnRefrescar.TabIndex = 184;
@@ -311,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(789, 342);
+            this.ClientSize = new System.Drawing.Size(680, 342);
             this.ControlBox = false;
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.btnBuscarLocalización);
@@ -319,8 +319,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(805, 381);
-            this.MinimumSize = new System.Drawing.Size(805, 381);
+            this.MaximumSize = new System.Drawing.Size(696, 381);
+            this.MinimumSize = new System.Drawing.Size(696, 381);
             this.Name = "frmcontrolLocalizaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Localizaciones ";

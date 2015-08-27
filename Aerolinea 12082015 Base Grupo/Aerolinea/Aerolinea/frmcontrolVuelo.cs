@@ -21,7 +21,7 @@ namespace Aerolinea
 
         private void funconsultaLocalidad() { 
             using (clasconexion.funobtenerConexion()){
-                string squery = "SELECT vdescripcion as Lugar FROM trdestino order by vdescripcion asc";
+                string squery = "SELECT vdescripcion as Lugar FROM TrDESTINO order by vdescripcion asc";
                 MySqlCommand cmd1 = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                 DataTable dtDatos = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
@@ -48,13 +48,16 @@ namespace Aerolinea
             funlimpiar();
         }
 
-        private void funcomboE() {
-            try {
-                using (clasconexion.funobtenerConexion()) {
-                    string scomboE = "SELECT ncodvuelo as Codigo from MaVuelo WHERE vdisponibilidad='ACTIVO' ORDER BY ncodvuelo ASC";
-                    MySqlCommand cmdComboE = new MySqlCommand(scomboE,clasconexion.funobtenerConexion());
+        private void funcomboE()
+        {
+            try
+            {
+                using (clasconexion.funobtenerConexion())
+                {
+                    string scomboE = "SELECT ncodvuelo as Codigo from MaVUELO WHERE vdisponibilidad='ACTIVO' ORDER BY ncodvuelo ASC";
+                    MySqlCommand cmdComboE = new MySqlCommand(scomboE, clasconexion.funobtenerConexion());
                     DataTable dtcomboE = new DataTable();
-                    MySqlDataAdapter mdcomboE = new MySqlDataAdapter(scomboE,clasconexion.funobtenerConexion());
+                    MySqlDataAdapter mdcomboE = new MySqlDataAdapter(scomboE, clasconexion.funobtenerConexion());
                     mdcomboE.Fill(dtcomboE);
                     cmbeliminarVuelo.DataSource = dtcomboE;
                     cmbeliminarVuelo.DisplayMember = "Codigo";
@@ -69,7 +72,7 @@ namespace Aerolinea
         {
             using (clasconexion.funobtenerConexion())
             {
-                string squeryL = "SELECT vdescripcion as Lugar FROM trdestino order by vdescripcion asc";
+                string squeryL = "SELECT vdescripcion as Lugar FROM TrDESTINO order by vdescripcion asc";
                 MySqlCommand cmdl = new MySqlCommand(squeryL, clasconexion.funobtenerConexion());
                 DataTable dtDatosL = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squeryL, clasconexion.funobtenerConexion());
@@ -84,7 +87,7 @@ namespace Aerolinea
         {
             using (clasconexion.funobtenerConexion())
             {
-                string squery2 = "SELECT vaerolinea as aerolinea FROM maavion order by vaerolinea asc";
+                string squery2 = "SELECT vaerolinea as aerolinea FROM MaAVION order by vaerolinea asc";
                 MySqlCommand cmd2 = new MySqlCommand(squery2, clasconexion.funobtenerConexion());
                 DataTable dtDatos2 = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery2, clasconexion.funobtenerConexion());
@@ -98,7 +101,7 @@ namespace Aerolinea
         private void funconsultaTv() {
             try{
                 using (clasconexion.funobtenerConexion()) {
-                    string sconsultaTv = "SELECT vdescripcion as TipoVuelo From matipovuelo order by vdescripcion asc";
+                    string sconsultaTv = "SELECT vdescripcion as TipoVuelo From MaTIPOVUELO order by vdescripcion asc";
                     MySqlCommand cmdconsultaTv = new MySqlCommand(sconsultaTv, clasconexion.funobtenerConexion());
                     DataTable dtconsultaTv = new DataTable();
                     MySqlDataAdapter mdConsultaTv = new MySqlDataAdapter(sconsultaTv, clasconexion.funobtenerConexion());
@@ -115,11 +118,11 @@ namespace Aerolinea
             try {
                 using (clasconexion.funobtenerConexion()) {
                     int icodl;
-                    string slugar = "select ncodtipodestino as Destino from trdestino where vdescripcion='"+ cmbdestino.Text +"'";
+                    string slugar = "select ncodtipodestino as Destino from TrDESTINO where vdescripcion='"+ cmbdestino.Text +"'";
                     MySqlCommand scodl = new MySqlCommand(slugar, clasconexion.funobtenerConexion());
                     icodl = Convert.ToInt32(scodl.ExecuteScalar());
                     
-                    string sconsultaA = "SELECT vnombreaeropuerto as Aeropuerto from maaeropuerto where ncodtipodestino="+icodl+" order by vnombreaeropuerto asc";
+                    string sconsultaA = "SELECT vnombreaeropuerto as Aeropuerto from MaAEROPUERTO where ncodtipodestino="+icodl+" order by vnombreaeropuerto asc";
                     MySqlCommand cmdconsultaA = new MySqlCommand(sconsultaA, clasconexion.funobtenerConexion());
                     DataTable dtconsultaA = new DataTable();
                     MySqlDataAdapter mdconsultaA = new MySqlDataAdapter(sconsultaA, clasconexion.funobtenerConexion());
@@ -136,11 +139,11 @@ namespace Aerolinea
         {
             using (clasconexion.funobtenerConexion())
             {
-                string squery3 = "SELECT ncodvuelo as Codigo,dfechavuelo as FechaVuelo,vlugarsalida as Origen, dthoradespegue as HoraDespegue,trdestino.vdescripcion as Destino,dthoraaterrisaje as HoraAterrisaje,vnombreaeropuerto as Aeropuerto,nterminal as Terminal,nembarque as Embarque,matipovuelo.vdescripcion as TipoVuelo,maavion.vaerolinea as Aerolinea "+
-                    "from mavuelo inner join trdestino on trdestino.ncodtipodestino=mavuelo.ncodtipodestino "+
-                    "inner join maaeropuerto on maaeropuerto.ncodaeropuerto=mavuelo.ncodaeropuerto "+
-                    "inner join matipovuelo on mavuelo.ncodtipovuelo=matipovuelo.ncodtipovuelo "+
-                    "inner join maavion on maavion.ncodavion=mavuelo.ncodavion WHERE mavuelo.vdisponibilidad='ACTIVO' order by mavuelo.ncodvuelo asc;";
+                string squery3 = "SELECT ncodvuelo as Codigo,dfechavuelo as FechaVuelo,vlugarsalida as Origen, dthoradespegue as HoraDespegue,TrDESTINO.vdescripcion as Destino,dthoraaterrisaje as HoraAterrisaje,vnombreaeropuerto as Aeropuerto,nterminal as Terminal,nembarque as Embarque,MaTIPOVUELO.vdescripcion as TipoVuelo,MaAVION.vaerolinea as Aerolinea " +
+                    "from MaVUELO inner join TrDESTINO on TrDESTINO.ncodtipodestino=MaVUELO.ncodtipodestino " +
+                    "inner join MaAEROPUERTO on MaAEROPUERTO.ncodaeropuerto=MaVUELO.ncodaeropuerto " +
+                    "inner join MaTIPOVUELO on MaVUELO.ncodtipovuelo=MaTIPOVUELO.ncodtipovuelo " +
+                    "inner join MaAVION on MaAVION.ncodavion=MaVUELO.ncodavion WHERE MaVUELO.vdisponibilidad='ACTIVO' order by MaVUELO.ncodvuelo asc;";
                 MySqlCommand cmdv = new MySqlCommand(squery3, clasconexion.funobtenerConexion());
                 DataTable dtDatos3 = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery3, clasconexion.funobtenerConexion());
@@ -151,17 +154,20 @@ namespace Aerolinea
             }
         }
 
-        private void funconsultaV() {
-            try {
-                using (clasconexion.funobtenerConexion()) {
-                    string sbuscarV = "SELECT ncodvuelo as Codigo,dfechavuelo as FechaVuelo,vlugarsalida as Origen, dthoradespegue as HoraDespegue,trdestino.vdescripcion as Destino,dthoraaterrisaje as HoraAterrisaje,vnombreaeropuerto as Aeropuerto,nterminal as Terminal,nembarque as Embarque,matipovuelo.vdescripcion as TipoVuelo,maavion.vaerolinea as Aerolinea,mavuelo.vdisponibilidad as Disponibilidad " +
-                    "from mavuelo inner join trdestino on trdestino.ncodtipodestino=mavuelo.ncodtipodestino " +
-                    "inner join maaeropuerto on maaeropuerto.ncodaeropuerto=mavuelo.ncodaeropuerto " +
-                    "inner join matipovuelo on mavuelo.ncodtipovuelo=matipovuelo.ncodtipovuelo " +
-                    "inner join maavion on maavion.ncodavion=mavuelo.ncodavion WHERE vlugarsalida='"+ txtBuscar.Text +"' or  mavuelo.vdisponibilidad='ACTIVO' order by mavuelo.ncodvuelo asc;";
-                    MySqlCommand cmdbuscarV = new MySqlCommand(sbuscarV,clasconexion.funobtenerConexion());
+        private void funconsultaV()
+        {
+            try
+            {
+                using (clasconexion.funobtenerConexion())
+                {
+                    string sbuscarV = "SELECT ncodvuelo as Codigo,dfechavuelo as FechaVuelo,vlugarsalida as Origen, dthoradespegue as HoraDespegue,TrDESTINO.vdescripcion as Destino,dthoraaterrisaje as HoraAterrisaje,vnombreaeropuerto as Aeropuerto,nterminal as Terminal,nembarque as Embarque,MaTIPOVUELO.vdescripcion as TipoVuelo,MaAVION.vaerolinea as Aerolinea,MaVUELO.vdisponibilidad as Disponibilidad " +
+                    "from MaVUELO inner join TrDESTINO on TrDESTINO.ncodtipodestino=MaVUELO.ncodtipodestino " +
+                    "inner join MaAEROPUERTO on MaAEROPUERTO.ncodaeropuerto=MaVUELO.ncodaeropuerto " +
+                    "inner join MaTIPOVUELO on MaVUELO.ncodtipovuelo=MaTIPOVUELO.ncodtipovuelo " +
+                    "inner join MaAVION on MaAVION.ncodavion=MaVUELO.ncodavion WHERE (vlugarsalida='" + txtBuscar.Text + "' or TrDESTINO.vdescripcion='" + txtBuscar.Text + "' or vnombreaeropuerto='" + txtBuscar.Text + "' or MaAVION.vaerolinea='"+txtBuscar.Text+"' ) and  MaVUELO.vdisponibilidad='ACTIVO' order by MaVUELO.ncodvuelo asc;";
+                    MySqlCommand cmdbuscarV = new MySqlCommand(sbuscarV, clasconexion.funobtenerConexion());
                     DataTable dtbuscarV = new DataTable();
-                    MySqlDataAdapter mdbuscarV = new MySqlDataAdapter(sbuscarV,clasconexion.funobtenerConexion());
+                    MySqlDataAdapter mdbuscarV = new MySqlDataAdapter(sbuscarV, clasconexion.funobtenerConexion());
                     mdbuscarV.Fill(dtbuscarV);
                     grdVuelo.DataSource = dtbuscarV;
                     grdVuelo.AutoResizeColumns();
@@ -175,13 +181,13 @@ namespace Aerolinea
             cmbaerolinea.Text = "";
             cmbaeropuerto.Text = "";
             cmbdestino.Text = "";
-            cmbembarque.Text="";
+            cmbembarque.Text = "";
             cmborigen.Text = "";
             cmbterminal.Text = "";
             cmbtipoVuelo.Text = "";
             txtBuscar.Text = "";
-            mtxhoraDespegue.Text="";
-            mtxhoraLlegada.Text="";
+            mtxhoraDespegue.Text = "";
+            mtxhoraLlegada.Text = "";
             cmbeliminarVuelo.Text = "";
 
         }
@@ -194,11 +200,9 @@ namespace Aerolinea
             funconsultarVuelos();
             funconsultaTv();
             funcomboE();
-            funlimpiar();
+            funlimpiar(); ;
         }
-
-        
-        
+   
         private void btnGuardarVuelo_Click_1(object sender, EventArgs e)
         {
             if((mtxhoraDespegue.Text!="")&&(mtxhoraLlegada.Text!="")&&(cmbaerolinea.Text!="")&&(cmbaeropuerto.Text!="")&&(cmbdestino.Text!="")&&(cmbembarque.Text!="")&&(cmborigen.Text!="")&&(cmbterminal.Text!="")&&(cmbtipoVuelo.Text!="")){
@@ -212,23 +216,23 @@ namespace Aerolinea
                 int icodaeropuerto;
                 using (clasconexion.funobtenerConexion()){
                     //PROGRAMADOR Y ANALISTA: Pamela Jacqueline Selman David
-                    string squery = "SELECT COUNT(*) As Cant FROM aerolinea.MaVUELO ";
+                    string squery = "SELECT COUNT(*) As Cant FROM AEROLINEA.MaVUELO ";
                     MySqlCommand cmd = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                     icodigoVuelo = (Convert.ToInt32(cmd.ExecuteScalar())) + 1;
 
-                    string scodavion = "SELECT ncodavion as codigoavion from maavion where vaerolinea='"+ cmbaerolinea.Text +"';";
+                    string scodavion = "SELECT ncodavion as codigoavion from MaAVION where vaerolinea='"+ cmbaerolinea.Text +"';";
                     MySqlCommand cmdcodavion = new MySqlCommand(scodavion, clasconexion.funobtenerConexion());
                     icodavion = Convert.ToInt32(cmdcodavion.ExecuteScalar());
 
-                    string scodtipoV = "SELECT ncodtipovuelo as codigotipovuelo from matipovuelo where vdescripcion='"+ cmbtipoVuelo.Text +"';";
+                    string scodtipoV = "SELECT ncodtipovuelo as codigotipovuelo from MaTIPOVUELO where vdescripcion='"+ cmbtipoVuelo.Text +"';";
                     MySqlCommand cmdcodtipov = new MySqlCommand(scodtipoV,clasconexion.funobtenerConexion());
                     icodtipoV = Convert.ToInt32(cmdcodtipov.ExecuteScalar());
 
-                    string scoddestino = "SELECT ncodtipodestino as destino from trdestino where vdescripcion='"+ cmbdestino.Text +"';";
+                    string scoddestino = "SELECT ncodtipodestino as destino from TrDESTINO where vdescripcion='"+ cmbdestino.Text +"';";
                     MySqlCommand cmddestino = new MySqlCommand(scoddestino, clasconexion.funobtenerConexion());
                     icoddestino = Convert.ToInt32(cmddestino.ExecuteScalar());
 
-                    string scodaeropuerto = "SELECT ncodaeropuerto as aeropuerto from maaeropuerto where vnombreaeropuerto='"+ cmbaeropuerto.Text +"';";
+                    string scodaeropuerto = "SELECT ncodaeropuerto as aeropuerto from MaAEROPUERTO where vnombreaeropuerto='"+ cmbaeropuerto.Text +"';";
                     MySqlCommand cmdaeropuerto = new MySqlCommand(scodaeropuerto, clasconexion.funobtenerConexion());
                     icodaeropuerto = Convert.ToInt32(cmdaeropuerto.ExecuteScalar());
                     
@@ -249,7 +253,7 @@ namespace Aerolinea
             {
                 MessageBox.Show(ex.Message);
             }
-            }else{MessageBox.Show("CAMPOS VACION");}
+            }else { MessageBox.Show("CAMPOS VACION"); }
         }
 
         private void btnBuscarVuelo_Click_1(object sender, EventArgs e)
@@ -287,16 +291,21 @@ namespace Aerolinea
             cmbaeropuerto.Text = "";
         }
 
-        private void btnEliminarVuelo_Click(object sender, EventArgs e)
+        private void btnEliminarVuelo_Click_1(object sender, EventArgs e)
         {
             if (cmbeliminarVuelo.Text != "")
             {
                 funeliminar();
             }
             else { MessageBox.Show("NO HAY VUELO A ELIMINAR"); }
-            
+
         }
 
-      
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            funconsultarVuelos();
+            funlimpiar();
+        }
+
     }
 }

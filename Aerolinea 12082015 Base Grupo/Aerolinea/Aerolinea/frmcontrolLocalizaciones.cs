@@ -26,7 +26,7 @@ namespace Aerolinea
         {
             using (clasconexion.funobtenerConexion())
             {
-                string squerybuscarLugar = "SELECT  vdescripcion as Lugar,ncodtipodestino as CodigoLocacion FROM aerolinea.TrDESTINO ORDER BY CodigoLocacion ASC;";
+                string squerybuscarLugar = "SELECT  vdescripcion as Lugar,ncodtipodestino as CodigoLocacion FROM AEROLINEA.TrDESTINO ORDER BY CodigoLocacion ASC;";
                 MySqlCommand cmdb = new MySqlCommand(squerybuscarLugar, clasconexion.funobtenerConexion());
                 DataTable dtDatosb = new DataTable();
                 MySqlDataAdapter mdaDatosb = new MySqlDataAdapter(squerybuscarLugar, clasconexion.funobtenerConexion());
@@ -54,8 +54,8 @@ namespace Aerolinea
         }
         
         private void funconsultarAeropuerto() { 
-            string sbuscarAeropuerto="SELECT vdescripcion as Locacion, vnombreaeropuerto as Aeropuerto from maaeropuerto "+
-                "inner join trdestino on maaeropuerto.ncodtipodestino=trdestino.ncodtipodestino order by trdestino.vdescripcion asc";
+            string sbuscarAeropuerto="SELECT vdescripcion as Locacion, vnombreaeropuerto as Aeropuerto from MaAEROPUERTO "+
+                "inner join TrDESTINO on MaAEROPUERTO.ncodtipodestino=TrDESTINO.ncodtipodestino order by TrDESTINO.vdescripcion asc";
             MySqlCommand cbuscarAeropuerto = new MySqlCommand(sbuscarAeropuerto,clasconexion.funobtenerConexion());
             DataTable dtAeropuerto = new DataTable();
             MySqlDataAdapter mdaAerolinea = new MySqlDataAdapter(sbuscarAeropuerto,clasconexion.funobtenerConexion());
@@ -67,7 +67,7 @@ namespace Aerolinea
 
         private void funbuscarLocalizacion() {
             using (clasconexion.funobtenerConexion()) {
-                string sbuscarL = "SELECT vdescripcion as Lugar,ncodtipodestino as CodigoLocacion FROM aerolinea.TrDESTINO WHERE vdescripcion='" + txtBuscarLocalizacion.Text + "';";
+                string sbuscarL = "SELECT vdescripcion as Lugar,ncodtipodestino as CodigoLocacion FROM AEROLINEA.TrDESTINO WHERE vdescripcion='" + txtBuscarLocalizacion.Text + "';";
                 MySqlCommand buscarL = new MySqlCommand(sbuscarL, clasconexion.funobtenerConexion());
                 DataTable dtDatosL = new DataTable();
                 MySqlDataAdapter mdDatosL = new MySqlDataAdapter(sbuscarL, clasconexion.funobtenerConexion());
@@ -80,9 +80,9 @@ namespace Aerolinea
         }
 
         private void funbuscarAeropuerto() {
-            string sbuscarA = "SELECT vdescripcion as Locacion, vnombreaeropuerto as Aeropuerto from maaeropuerto " +
-                "inner join trdestino on maaeropuerto.ncodtipodestino=trdestino.ncodtipodestino "+
-                "WHERE trdestino.vdescripcion='" + txtBuscarAeropuerto.Text + "' or maaeropuerto.vnombreaeropuerto='"+ txtBuscarAeropuerto.Text +"' order by trdestino.vdescripcion asc";
+            string sbuscarA = "SELECT vdescripcion as Locacion, vnombreaeropuerto as Aeropuerto from MaAEROPUERTO " +
+                "inner join TrDESTINO on MaAEROPUERTO.ncodtipodestino=TrDESTINO.ncodtipodestino "+
+                "WHERE TrDESTINO.vdescripcion='" + txtBuscarAeropuerto.Text + "' or MaAEROPUERTO.vnombreaeropuerto='"+ txtBuscarAeropuerto.Text +"' order by trdestino.vdescripcion asc";
             MySqlCommand buscarA = new MySqlCommand(sbuscarA, clasconexion.funobtenerConexion());
             DataTable dtDatosA=new DataTable();
             MySqlDataAdapter mdDatosA = new MySqlDataAdapter(sbuscarA, clasconexion.funobtenerConexion());
@@ -118,13 +118,13 @@ namespace Aerolinea
                         using (clasconexion.funobtenerConexion())
                         {
                             //PROGRAMADOR Y ANALISTA: Pamela Jacqueline Selman David
-                            string squery = "SELECT COUNT(*) As Cant FROM aerolinea.TrDESTINO ";
+                            string squery = "SELECT COUNT(*) As Cant FROM AEROLINEA.TrDESTINO ";
                             MySqlCommand cmd = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                             ifilas = Convert.ToInt32(cmd.ExecuteScalar());
                             icodigoLocalizacion = ifilas + 1;
 
                             //PROGRAMADOR Y ANALISTA: Jose Alberto Oxcal Ley
-                            string sinsertaravion = "INSERT INTO aerolinea.TrDESTINO (ncodtipodestino,vdescripcion) VALUES(" + icodigoLocalizacion + ",'" + txtLugar.Text + "')";
+                            string sinsertaravion = "INSERT INTO AEROLINEA.TrDESTINO (ncodtipodestino,vdescripcion) VALUES(" + icodigoLocalizacion + ",'" + txtLugar.Text + "')";
                             MySqlCommand cmd1 = new MySqlCommand(sinsertaravion, clasconexion.funobtenerConexion());
                             MySqlDataReader MyReader;
                             MyReader = cmd1.ExecuteReader();
@@ -152,15 +152,15 @@ namespace Aerolinea
                         {
                             int idestino;
                             int icodigoAeropuerto;
-                            string scodigo = "SELECT ncodtipodestino as destino FROM aerolinea.TrDESTINO WHERE vdescripcion='" + cmbLugar.Text + "'";
+                            string scodigo = "SELECT ncodtipodestino as destino FROM AEROLINEA.TrDESTINO WHERE vdescripcion='" + cmbLugar.Text + "'";
                             MySqlCommand ccod = new MySqlCommand(scodigo, clasconexion.funobtenerConexion());
                             idestino = Convert.ToInt32(ccod.ExecuteScalar());
 
-                            string sposicion = "SELECT COUNT(*) As Cant FROM aerolinea.MaAEROPUERTO";
+                            string sposicion = "SELECT COUNT(*) As Cant FROM AEROLINEA.MaAEROPUERTO";
                             MySqlCommand cpos = new MySqlCommand(sposicion, clasconexion.funobtenerConexion());
                             icodigoAeropuerto = (Convert.ToInt32(cpos.ExecuteScalar())) + 1;
 
-                            string sinsertaraeropuerto = "INSERT INTO aerolinea.MaAEROPUERTO (ncodaeropuerto,vnombreaeropuerto,ncodtipodestino) VALUES(" + icodigoAeropuerto + ",'" + txtAeropuerto.Text + "'," + idestino + ")";
+                            string sinsertaraeropuerto = "INSERT INTO AEROLINEA.MaAEROPUERTO (ncodaeropuerto,vnombreaeropuerto,ncodtipodestino) VALUES(" + icodigoAeropuerto + ",'" + txtAeropuerto.Text + "'," + idestino + ")";
                             MySqlCommand cinsertar = new MySqlCommand(sinsertaraeropuerto, clasconexion.funobtenerConexion());
                             MySqlDataReader Myguardar;
                             Myguardar = cinsertar.ExecuteReader();
@@ -221,6 +221,8 @@ namespace Aerolinea
                 funconsultarLugares();
             }else if(tabLocalizacion.SelectedIndex==1){
                 funconsultarAeropuerto();
+                funaeropuerto();
+                funlimpiar();
             }
                 
         }
