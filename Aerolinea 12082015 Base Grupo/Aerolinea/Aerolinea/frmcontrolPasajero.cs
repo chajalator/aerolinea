@@ -40,7 +40,7 @@ namespace Aerolinea
         {
             using (clasconexion.funobtenerConexion())
             {
-                string squery = "SELECT ncodpasajero  FROM aerolinea.MaPASAJERO";
+                string squery = "SELECT ncodpasajero  FROM AEROLINEA.MaPASAJERO";
                 MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                 DataTable dtDatos = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
@@ -56,7 +56,7 @@ namespace Aerolinea
         {
             using (clasconexion.funobtenerConexion())
             {
-                string squery = "SELECT ncodpasajero  FROM aerolinea.MaPASAJERO where vestado='ACTIVO'";
+                string squery = "SELECT ncodpasajero  FROM AEROLINEA.MaPASAJERO where vestado='ACTIVO'";
                 MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                 DataTable dtDatos = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
@@ -74,7 +74,7 @@ namespace Aerolinea
         {
           using (clasconexion.funobtenerConexion())
             {
-                string squery = "SELECT ncodpasajero as CodigoPasajero,vnompasajero as NombrePasajero,vapepasajero as ApellidoPasajero,vdireccion as DireccionPasajero,nedadpasajero as EdadPasajero,vdpi as DPI, DATE_FORMAT(dfechanacimiento, '%d-%m-%Y') as FechaNacimiento, vnopasaporte as PasaportePasajero,vestado as EstadoPasajero FROM aerolinea.MaPASAJERO  where vestado='ACTIVO'";
+                string squery = "SELECT ncodpasajero as CodigoPasajero,vnompasajero as NombrePasajero,vapepasajero as ApellidoPasajero,vdireccion as DireccionPasajero,nedadpasajero as EdadPasajero,vdpi as DPI, DATE_FORMAT(dfechanacimiento, '%d-%m-%Y') as FechaNacimiento, vnopasaporte as PasaportePasajero,vestado as EstadoPasajero FROM AEROLINEA.MaPASAJERO  where vestado='ACTIVO'";
                 MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                 DataTable dtDatos = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
@@ -93,7 +93,7 @@ namespace Aerolinea
                 int icodigoPasajero;
                 using (clasconexion.funobtenerConexion())
                 {
-                    string squery = "SELECT COUNT(*) As Cant FROM aerolinea.MaPASAJERO ";
+                    string squery = "SELECT COUNT(*) As Cant FROM AEROLINEA.MaPASAJERO ";
                     MySqlCommand cmd = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                     ifilas = Convert.ToInt32(cmd.ExecuteScalar());
                     icodigoPasajero = ifilas + 1;
@@ -106,7 +106,7 @@ namespace Aerolinea
     
                     string sfechaNacimiento = dtpasajero.Value.ToShortDateString();
                     //MessageBox.Show(sfechaNacimiento);
-                    string sinsertarPasajero = "INSERT INTO aerolinea.MaPASAJERO  (ncodpasajero,vnompasajero,vapepasajero,vdireccion,nedadpasajero,vdpi,dfechanacimiento,vnopasaporte,vestado)values(" + icodigoPasajero + ",'" + txtNomPasajero.Text + "','" + txtApellidoPasajero.Text + "','" + txtDireccionPasajero.Text + "'," + txtEdadPasajero.Text + ",'" + txtdpiPasajero.Text + "','" + dtpasajero.Text + "','" + txtnoPasaporte.Text + "','" + "ACTIVO" + "')";
+                    string sinsertarPasajero = "INSERT INTO AEROLINEA.MaPASAJERO  (ncodpasajero,vnompasajero,vapepasajero,vdireccion,nedadpasajero,vdpi,dfechanacimiento,vnopasaporte,vestado)values(" + icodigoPasajero + ",'" + txtNomPasajero.Text + "','" + txtApellidoPasajero.Text + "','" + txtDireccionPasajero.Text + "'," + txtEdadPasajero.Text + ",'" + txtdpiPasajero.Text + "','" + dtpasajero.Text + "','" + txtnoPasaporte.Text + "','" + "ACTIVO" + "')";
                     MySqlCommand cmd2 = new MySqlCommand(sinsertarPasajero, clasconexion.funobtenerConexion());
                     MySqlDataReader MyReader;
                     MyReader = cmd2.ExecuteReader();  
@@ -115,13 +115,13 @@ namespace Aerolinea
                      
                         
                           for (int itelefono=0; itelefono < icontadorTelefonosPasajeros; itelefono++) {
-                           string sinsertartelefono1 = "INSERT INTO aerolinea.TrTELEFONO (ncodpasajero,ntelefono)values(" + icodigoPasajero + "," + stelefono[itelefono] +  ");";
+                           string sinsertartelefono1 = "INSERT INTO AEROLINEA.TrTELEFONO (ncodpasajero,ntelefono)values(" + icodigoPasajero + "," + stelefono[itelefono] +  ");";
                             MySqlCommand cmd3 = new MySqlCommand(sinsertartelefono1, clasconexion.funobtenerConexion());
                             cmd3.ExecuteNonQuery();
                         }
 
                           for (int icorreo = 0; icorreo < icontadorCorreosPasajeros; icorreo++) {
-                              string sinsertarcorreo1 = "INSERT INTO aerolinea.TrCORREO (ncodpasajero,vcorreo)values(" + icodigoPasajero + ",'" + scorreo[icorreo] + "');";
+                              string sinsertarcorreo1 = "INSERT INTO AEROLINEA.TrCORREO (ncodpasajero,vcorreo)values(" + icodigoPasajero + ",'" + scorreo[icorreo] + "');";
                               MySqlCommand cmd5 = new MySqlCommand(sinsertarcorreo1, clasconexion.funobtenerConexion());
                               cmd5.ExecuteNonQuery();
                           
@@ -173,7 +173,7 @@ namespace Aerolinea
             using (clasconexion.funobtenerConexion())
             {
 
-                string squeryBuscarPasajero = "SELECT ncodpasajero as CodigoPasajero,vnompasajero as NombrePasajero,vapepasajero as ApellidoPasajero,vdireccion as DireccionPasajero,nedadpasajero as Edad,vdpi as DPI,dfechanacimiento  as FechaNacimiento,vnopasaporte as PasaportePasajero,vestado as EstadoPasajero FROM aerolinea.MaPASAJERO  where vnopasaporte='" + txtBusquedaPasajero.Text + "' or ncodpasajero=" + txtBusquedaPasajero.Text;
+                string squeryBuscarPasajero = "SELECT ncodpasajero as CodigoPasajero,vnompasajero as NombrePasajero,vapepasajero as ApellidoPasajero,vdireccion as DireccionPasajero,nedadpasajero as Edad,vdpi as DPI,dfechanacimiento  as FechaNacimiento,vnopasaporte as PasaportePasajero,vestado as EstadoPasajero FROM AEROLINEA.MaPASAJERO  where vnopasaporte='" + txtBusquedaPasajero.Text + "' or ncodpasajero=" + txtBusquedaPasajero.Text;
                 MySqlCommand cmdc = new MySqlCommand(squeryBuscarPasajero, clasconexion.funobtenerConexion());
                 DataTable dtDat = new DataTable();
                 MySqlDataAdapter mdaDat = new MySqlDataAdapter(squeryBuscarPasajero, clasconexion.funobtenerConexion());
@@ -198,7 +198,7 @@ namespace Aerolinea
                 try { 
                 string sfechaNacimiento = dtpasajero.Value.ToShortDateString();
                 //MessageBox.Show(sfechaNacimiento);
-                string seliminarPasajero = "UPDATE aerolinea.MaPASAJERO  set vestado = 'INACTIVO' where ncodpasajero=" + cmbeliminarPasajero.Text ;
+                string seliminarPasajero = "UPDATE AEROLINEA.MaPASAJERO  set vestado = 'INACTIVO' where ncodpasajero=" + cmbeliminarPasajero.Text ;
                 MySqlCommand cmd2 = new MySqlCommand(seliminarPasajero, clasconexion.funobtenerConexion());
                 cmd2.ExecuteNonQuery();
                 clasconexion.funobtenerConexion().Close();
@@ -294,13 +294,13 @@ namespace Aerolinea
             using (clasconexion.funobtenerConexion())
             {
 
-                string squeryBuscarPasajero = "SELECT ncodpasajero as CodigoPasajero,ntelefono as TelefonoPasajero FROM aerolinea.TrTELEFONO  where ncodpasajero=" + cmbcodPasajero.Text;
+                string squeryBuscarPasajero = "SELECT ncodpasajero as CodigoPasajero,ntelefono as TelefonoPasajero FROM AEROLINEA.TrTELEFONO  where ncodpasajero=" + cmbcodPasajero.Text;
                 MySqlCommand cmdc = new MySqlCommand(squeryBuscarPasajero, clasconexion.funobtenerConexion());
                 DataTable dtDat = new DataTable();
                 MySqlDataAdapter mdaDat = new MySqlDataAdapter(squeryBuscarPasajero, clasconexion.funobtenerConexion());
                 mdaDat.Fill(dtDat);
                 grdtelefonoPasajero.DataSource = dtDat;
-                string squeryBuscarCorreos = "SELECT ncodpasajero as CodigoPasajero,vcorreo as CorreoPasajero FROM aerolinea.TrCORREO where ncodpasajero=" + cmbcodPasajero.Text;
+                string squeryBuscarCorreos = "SELECT ncodpasajero as CodigoPasajero,vcorreo as CorreoPasajero FROM AEROLINEA.TrCORREO where ncodpasajero=" + cmbcodPasajero.Text;
                 MySqlCommand cmndco = new MySqlCommand(squeryBuscarCorreos, clasconexion.funobtenerConexion());
                 DataTable dtDatCorreo = new DataTable();
                 MySqlDataAdapter mDatCorreo = new MySqlDataAdapter(squeryBuscarCorreos, clasconexion.funobtenerConexion());
