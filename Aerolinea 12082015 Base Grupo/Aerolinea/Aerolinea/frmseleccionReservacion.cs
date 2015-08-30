@@ -17,7 +17,8 @@ namespace Aerolinea
         {
             InitializeComponent();
         }
-
+        public string pasoVariable { get; set; }
+        int  suma;
         private void btnA2_Click(object sender, EventArgs e)
         {
             btnA2.BackColor = Color.Red;
@@ -416,6 +417,14 @@ namespace Aerolinea
         private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmseleccionReservacion_Load(object sender, EventArgs e)
+        {
+           
+            string s = Convert.ToString(suma);
+             s = this.pasoVariable;
+            MessageBox.Show("recibiendo la variable" + s);
         }
 
     }
