@@ -1,6 +1,6 @@
 ﻿namespace Aerolinea
 {
-    partial class frmseleccionReservacion
+    partial class seleccionReservacion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmseleccionReservacion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(seleccionReservacion));
             this.btnA2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnA3 = new System.Windows.Forms.Button();
@@ -108,11 +108,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.btnReservar = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.rEGRESARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnA2
@@ -981,13 +978,26 @@
     " vuelo si es pasillo o en la fila de en medio y un 75%si se ubica en la ventanil" +
     "la.";
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
+            this.btnRegresar.Location = new System.Drawing.Point(30, 34);
+            this.btnRegresar.MaximumSize = new System.Drawing.Size(110, 50);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(110, 50);
+            this.btnRegresar.TabIndex = 79;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            // 
             // btnReservar
             // 
             this.btnReservar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReservar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReservar.Image = ((System.Drawing.Image)(resources.GetObject("btnReservar.Image")));
-            this.btnReservar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReservar.Location = new System.Drawing.Point(1078, 294);
+            this.btnReservar.Location = new System.Drawing.Point(1146, 294);
             this.btnReservar.MaximumSize = new System.Drawing.Size(110, 50);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(110, 50);
@@ -997,47 +1007,15 @@
             this.btnReservar.UseVisualStyleBackColor = true;
             this.btnReservar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rEGRESARToolStripMenuItem,
-            this.sALIRToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1329, 27);
-            this.menuStrip1.TabIndex = 172;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // rEGRESARToolStripMenuItem
-            // 
-            this.rEGRESARToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rEGRESARToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("rEGRESARToolStripMenuItem.Image")));
-            this.rEGRESARToolStripMenuItem.Name = "rEGRESARToolStripMenuItem";
-            this.rEGRESARToolStripMenuItem.Size = new System.Drawing.Size(106, 23);
-            this.rEGRESARToolStripMenuItem.Text = "REGRESAR";
-            this.rEGRESARToolStripMenuItem.Click += new System.EventHandler(this.rEGRESARToolStripMenuItem_Click);
-            // 
-            // sALIRToolStripMenuItem
-            // 
-            this.sALIRToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.sALIRToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sALIRToolStripMenuItem.Image = global::Aerolinea.Properties.Resources.salir;
-            this.sALIRToolStripMenuItem.Name = "sALIRToolStripMenuItem";
-            this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(73, 23);
-            this.sALIRToolStripMenuItem.Text = "SALIR";
-            this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
-            // 
-            // frmseleccionReservacion
+            // seleccionReservacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1329, 643);
-            this.ControlBox = false;
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnReservar);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -1117,15 +1095,8 @@
             this.Controls.Add(this.btnA3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnA2);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1345, 682);
-            this.MinimumSize = new System.Drawing.Size(1345, 682);
-            this.Name = "frmseleccionReservacion";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "seleccionReservacion";
             this.Text = "seleccionReservacion";
-            this.Load += new System.EventHandler(this.frmseleccionReservacion_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1212,9 +1183,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnReservar;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem rEGRESARToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
     }
 }

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySql.Data;
+//PROGRAMADOR Y ANALISTA: Gerardo Santizo
+//Fecha Inicio: 14/Agosto/2015      Fecha Fin: 18/Agosto/2015
+
 
 namespace Aerolinea
 {
@@ -102,6 +105,9 @@ namespace Aerolinea
                 cmd7.CommandText = "UPDATE MaUSUARIO SET   vestado = " + "'" + cmbModificarEstado.SelectedItem + "'" + " WHERE ncodusuario = '" + cmbusuarioModificar.SelectedValue + "'";
                 int numRowsUpdated2 = cmd7.ExecuteNonQuery();
                 MessageBox.Show("USUARIO MODIFICADO");
+                //INGRESO BITACORA
+                claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario, "Modifico Usaurio", "MaUsuario");
+                //FIN INGRESO BITACORA
                 clasconexion.funobtenerConexion().Close();
             }
         }

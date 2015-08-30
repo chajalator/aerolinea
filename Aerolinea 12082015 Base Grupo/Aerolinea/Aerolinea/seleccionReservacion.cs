@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//PROGRAMADOR Y ANALISTA: Jose Andrés Chajón Cueto
-//Fecha Inicio: 31/Julio/2015      Fecha Fin: 09/Agosto/2015
+
 namespace Aerolinea
 {
-    public partial class frmseleccionReservacion : Form
+    public partial class seleccionReservacion : Form
     {
-        public frmseleccionReservacion()
+        public seleccionReservacion()
         {
             InitializeComponent();
         }
@@ -392,35 +391,8 @@ namespace Aerolinea
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmrealizacionPago fmp = new frmrealizacionPago();
+            realizacionPago fmp = new realizacionPago();
             fmp.Show();
-        }
-
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void rEGRESARToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmingresoReservacion frmreserva = new frmingresoReservacion();
-            frmreserva.Show();
-            this.Hide();
-        }
-
-        private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void frmseleccionReservacion_Load(object sender, EventArgs e)
-        {
-
         }
 
     }

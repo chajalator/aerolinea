@@ -75,7 +75,7 @@
             this.groupBoxDatosUsuario.Controls.Add(this.labelPass);
             this.groupBoxDatosUsuario.Controls.Add(this.labelNombre);
             this.groupBoxDatosUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDatosUsuario.Location = new System.Drawing.Point(39, 54);
+            this.groupBoxDatosUsuario.Location = new System.Drawing.Point(36, 73);
             this.groupBoxDatosUsuario.Name = "groupBoxDatosUsuario";
             this.groupBoxDatosUsuario.Size = new System.Drawing.Size(244, 229);
             this.groupBoxDatosUsuario.TabIndex = 0;
@@ -178,7 +178,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(252, 31);
+            this.label2.Location = new System.Drawing.Point(249, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 20);
             this.label2.TabIndex = 1;
@@ -188,7 +188,7 @@
             // 
             this.grupoBoxRegistros.Controls.Add(this.grdUsuarios);
             this.grupoBoxRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grupoBoxRegistros.Location = new System.Drawing.Point(39, 289);
+            this.grupoBoxRegistros.Location = new System.Drawing.Point(36, 308);
             this.grupoBoxRegistros.Name = "grupoBoxRegistros";
             this.grupoBoxRegistros.Size = new System.Drawing.Size(597, 162);
             this.grupoBoxRegistros.TabIndex = 20;
@@ -228,7 +228,7 @@
             this.groupBox1.Controls.Add(this.txtbusquedaUsuario);
             this.groupBox1.Controls.Add(this.lblBuscar);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(289, 54);
+            this.groupBox1.Location = new System.Drawing.Point(286, 73);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(231, 229);
             this.groupBox1.TabIndex = 21;
@@ -258,7 +258,7 @@
             this.btnBuscarUsuario.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarUsuario.Image")));
             this.btnBuscarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarUsuario.Location = new System.Drawing.Point(526, 112);
+            this.btnBuscarUsuario.Location = new System.Drawing.Point(523, 131);
             this.btnBuscarUsuario.Name = "btnBuscarUsuario";
             this.btnBuscarUsuario.Size = new System.Drawing.Size(110, 50);
             this.btnBuscarUsuario.TabIndex = 17;
@@ -272,7 +272,7 @@
             this.btnEliminarUsuario.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarUsuario.Image = global::Aerolinea.Properties.Resources.eliminar;
             this.btnEliminarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(526, 234);
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(523, 253);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
             this.btnEliminarUsuario.Size = new System.Drawing.Size(110, 50);
             this.btnEliminarUsuario.TabIndex = 19;
@@ -286,7 +286,7 @@
             this.btnModificarUsuario.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarUsuario.Image")));
             this.btnModificarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificarUsuario.Location = new System.Drawing.Point(526, 175);
+            this.btnModificarUsuario.Location = new System.Drawing.Point(523, 194);
             this.btnModificarUsuario.Name = "btnModificarUsuario";
             this.btnModificarUsuario.Size = new System.Drawing.Size(110, 50);
             this.btnModificarUsuario.TabIndex = 18;
@@ -300,7 +300,7 @@
             this.btnGuardarUsuario.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarUsuario.Image")));
             this.btnGuardarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarUsuario.Location = new System.Drawing.Point(526, 56);
+            this.btnGuardarUsuario.Location = new System.Drawing.Point(523, 75);
             this.btnGuardarUsuario.Name = "btnGuardarUsuario";
             this.btnGuardarUsuario.Size = new System.Drawing.Size(110, 50);
             this.btnGuardarUsuario.TabIndex = 16;
@@ -316,7 +316,7 @@
             this.rEFRESCARToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(684, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(692, 27);
             this.menuStrip1.TabIndex = 182;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -332,8 +332,9 @@
             // 
             // rEFRESCARToolStripMenuItem
             // 
+            this.rEFRESCARToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("rEFRESCARToolStripMenuItem.Image")));
             this.rEFRESCARToolStripMenuItem.Name = "rEFRESCARToolStripMenuItem";
-            this.rEFRESCARToolStripMenuItem.Size = new System.Drawing.Size(80, 23);
+            this.rEFRESCARToolStripMenuItem.Size = new System.Drawing.Size(96, 23);
             this.rEFRESCARToolStripMenuItem.Text = "REFRESCAR";
             this.rEFRESCARToolStripMenuItem.Click += new System.EventHandler(this.rEFRESCARToolStripMenuItem_Click);
             // 
@@ -341,7 +342,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 459);
+            this.ClientSize = new System.Drawing.Size(692, 479);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);

@@ -108,7 +108,7 @@ namespace Aerolinea
             {
                 this.Close();
                 frmLogin login = new frmLogin();
-                login.Show();
+                login.Show();  
             }
         }
 
@@ -120,8 +120,14 @@ namespace Aerolinea
 
         private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmcontrolUsuarios usuario = new frmcontrolUsuarios();
-            usuario.Show();
+            frmcontrolUsuarios frcu = new frmcontrolUsuarios();
+            frcu.Show();
+        }
+
+        private void bictacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmbitacora bitacora = new frmbitacora();
+            bitacora.Show();
         }
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 //PROGRAMADOR Y ANALISTA: Gerardo Santizo
 //Fecha Inicio: 31/Julio/2015      Fecha Fin: 09/Agosto/2015
 namespace Aerolinea
@@ -36,8 +38,11 @@ namespace Aerolinea
                     Menu.toolStripStatusLabel2.Text = "Usuario: " + txtUser.Text;
                     Menu.toolStripStatusLabel.Text = DateTime.Now.ToString();
                    MessageBox.Show("Bienvenid@:  " + claseUsuario.user(txtUser.Text, txtPass.Text));
+                   claseUsuario.varibaleUsuario = txtUser.Text;
+                   claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario,"Ingreso al Sistema", "Administrador");
+                   MessageBox.Show(claseUsuario.varibaleUsuario);
                 }   
-                    //VALIDACIÓN DE USUARIO NORMAL (PERMISOS BÁSICOS DE INSERTAR Y CONSULTAR)
+               //VALIDACIÓN DE USUARIO NORMAL (PERMISOS BÁSICOS DE INSERTAR Y CONSULTAR)
                 else if (claseUsuario.user(txtUser.Text, txtPass.Text).Equals("Normal"))
                 {
                     this.Hide();
@@ -48,9 +53,11 @@ namespace Aerolinea
                     MenuNormal.uSUARIOSToolStripMenuItem.Enabled = false;
                     MenuNormal.rEPORTESToolStripMenuItem.Enabled = false;
                     MenuNormal.toolStripStatusLabel.Text = DateTime.Now.ToString();
-                    MessageBox.Show("Bienvenid@:  " + claseUsuario.user(txtUser.Text, txtPass.Text));
+                    claseUsuario.varibaleUsuario = txtUser.Text;
+                    claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario,"Ingreso al Sistema", "Normal");
+                    MessageBox.Show("Bienvenid@:  " + claseUsuario.user(txtUser.Text, txtPass.Text));   
                 }
-                    //VALIDACIÓN USUARIO QUE ACCEDE A INFORMACIÓN DE VUELOS
+               //VALIDACIÓN USUARIO QUE ACCEDE A INFORMACIÓN DE VUELOS
                 else if (claseUsuario.user(txtUser.Text, txtPass.Text).Equals("Vuelos")){
                     this.Hide();
                     frmMenu MenuVuelos = new frmMenu();
@@ -62,8 +69,9 @@ namespace Aerolinea
                     MenuVuelos.rESERVACIONESToolStripMenuItem.Enabled = false;
                     MenuVuelos.rEPORTESToolStripMenuItem.Enabled = false;
                     MenuVuelos.toolStripStatusLabel.Text = DateTime.Now.ToString();
-
-                    MessageBox.Show("Bienvenid@:  " + claseUsuario.user(txtUser.Text, txtPass.Text));
+                    claseUsuario.varibaleUsuario = txtUser.Text;
+                    claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario,"Ingreso al Sistema", "Vuelos");
+                    MessageBox.Show("Bienvenid@:  " + claseUsuario.user(txtUser.Text, txtPass.Text));               
                 }
                 //this.Hide();
                 //Menu menu = new Menu();

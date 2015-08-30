@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//PROGRAMADOR Y ANALISTA: Jose Andrés Chajón Cueto
+//Fecha Inicio: 31/Julio/2015      Fecha Fin: 09/Agosto/2015
+
 namespace Aerolinea
 {
     public partial class frmrealizacionPago : Form
@@ -37,6 +40,11 @@ namespace Aerolinea
         private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -20,10 +20,7 @@ namespace Aerolinea
             InitializeComponent();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-           
-        }
+      
 
         private void ingresoPasajero_Load(object sender, EventArgs e)
         {
@@ -31,17 +28,35 @@ namespace Aerolinea
             //label14.Visible = false;
             //cmbestadoPasajero.Visible = false;
             funconsultarPasajeros();
-            funllenarComboModificarPasajero();
             funllenarComboEliminarPasajero();
+            funllenarComboAdicionalesPasajero();
+            cmbeliminarPasajero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmbcodPasajero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             
 
+        }
+
+        private void funllenarComboAdicionalesPasajero()
+        {
+            using (clasconexion.funobtenerConexion())
+            {
+                string squery = "SELECT ncodpasajero  FROM AEROLINEA.MaPASAJERO";
+                MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
+                DataTable dtDatos = new DataTable();
+                MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
+                mdaDatos.Fill(dtDatos);
+                cmbcodPasajero.ValueMember = "ncodpasajero";
+                cmbcodPasajero.DisplayMember = "ncodpasajero";
+                cmbcodPasajero.DataSource = dtDatos;
+                clasconexion.funobtenerConexion().Close();
+            }
         }
 
         private void funllenarComboEliminarPasajero()
         {
             using (clasconexion.funobtenerConexion())
             {
-                string squery = "SELECT ncodpasajero  FROM aerolinea.MaPASAJERO where vestado='ACTIVO'";
+                string squery = "SELECT ncodpasajero  FROM AEROLINEA.MaPASAJERO where vestado='ACTIVO'";
                 MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                 DataTable dtDatos = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
@@ -53,35 +68,13 @@ namespace Aerolinea
             }
         }
 
-        private void funllenarComboModificarPasajero()
-        {
-
-            using (clasconexion.funobtenerConexion())
-            {
-                string squery = "SELECT ncodpasajero  FROM aerolinea.MaPASAJERO";
-                MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
-                MySqlDataReader myreader = cmdc.ExecuteReader();
-                while (myreader.Read())
-                {
-                         lstmodificoPasajero.Items.Add(myreader.GetString(0));
-                }
-                 myreader.Close();           
         
-                DataTable dtdatosPasajero = new DataTable();
-                MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
-                mdaDatos.Fill(dtdatosPasajero);
-                lstmodificoPasajero.Items.Add(dtdatosPasajero);
-                               
-               
-            }
-            clasconexion.funobtenerConexion().Close();
-        }
 
         private void funconsultarPasajeros()
         {
           using (clasconexion.funobtenerConexion())
             {
-                string squery = "SELECT ncodpasajero as CodigoPasajero,vnompasajero as NombrePasajero,vapepasajero as ApellidoPasajero,vdireccion as DireccionPasajero,nedadpasajero as EdadPasajero,vdpi as DPI, DATE_FORMAT(dfechanacimiento, '%d-%m-%Y') as FechaNacimiento, vnopasaporte as PasaportePasajero,vestado as EstadoPasajero FROM aerolinea.MaPASAJERO  where vestado='ACTIVO'";
+                string squery = "SELECT ncodpasajero as CodigoPasajero,vnompasajero as NombrePasajero,vapepasajero as ApellidoPasajero,vdireccion as DireccionPasajero,nedadpasajero as EdadPasajero,vdpi as DPI, DATE_FORMAT(dfechanacimiento, '%d-%m-%Y') as FechaNacimiento, vnopasaporte as PasaportePasajero,vestado as EstadoPasajero FROM AEROLINEA.MaPASAJERO  where vestado='ACTIVO'";
                 MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                 DataTable dtDatos = new DataTable();
                 MySqlDataAdapter mdaDatos = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
@@ -90,6 +83,7 @@ namespace Aerolinea
                 clasconexion.funobtenerConexion().Close();
             }
         }
+
         private void btnGuardarPasajero_Click(object sender, EventArgs e)
         {
             try
@@ -99,7 +93,7 @@ namespace Aerolinea
                 int icodigoPasajero;
                 using (clasconexion.funobtenerConexion())
                 {
-                    string squery = "SELECT COUNT(*) As Cant FROM aerolinea.MaPASAJERO ";
+                    string squery = "SELECT COUNT(*) As Cant FROM AEROLINEA.MaPASAJERO ";
                     MySqlCommand cmd = new MySqlCommand(squery, clasconexion.funobtenerConexion());
                     ifilas = Convert.ToInt32(cmd.ExecuteScalar());
                     icodigoPasajero = ifilas + 1;
@@ -112,43 +106,40 @@ namespace Aerolinea
     
                     string sfechaNacimiento = dtpasajero.Value.ToShortDateString();
                     //MessageBox.Show(sfechaNacimiento);
-                    string sinsertarPasajero = "INSERT INTO aerolinea.MaPASAJERO  (ncodpasajero,vnompasajero,vapepasajero,vdireccion,nedadpasajero,vdpi,dfechanacimiento,vnopasaporte,vestado)values(" + icodigoPasajero + ",'" + txtNomPasajero.Text + "','" + txtApellidoPasajero.Text + "','" + txtDireccionPasajero.Text + "'," + txtEdadPasajero.Text + ",'" + txtdpiPasajero.Text + "','" + dtpasajero.Text + "','" + txtnoPasaporte.Text + "','" + "ACTIVO" + "')";
+                    string sinsertarPasajero = "INSERT INTO AEROLINEA.MaPASAJERO  (ncodpasajero,vnompasajero,vapepasajero,vdireccion,nedadpasajero,vdpi,dfechanacimiento,vnopasaporte,vestado)values(" + icodigoPasajero + ",'" + txtNomPasajero.Text + "','" + txtApellidoPasajero.Text + "','" + txtDireccionPasajero.Text + "'," + txtEdadPasajero.Text + ",'" + txtdpiPasajero.Text + "','" + dtpasajero.Text + "','" + txtnoPasaporte.Text + "','" + "ACTIVO" + "')";
                     MySqlCommand cmd2 = new MySqlCommand(sinsertarPasajero, clasconexion.funobtenerConexion());
                     MySqlDataReader MyReader;
                     MyReader = cmd2.ExecuteReader();  
                     MessageBox.Show("PASAJERO ALMACENADO");
+                    //INGRESO BITACORA PROGRAMADOR Y ANALISTA GERADO SANTIZO
+                    claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario, "Ingreso Pasajero", "MaPasajero");
+                    //FIN iNGRESO bITACORA
 
-                    if (!string.IsNullOrWhiteSpace(txtTelefonoPasajero1.Text))
-                    {
-                        string sinsertartelefono1 = "INSERT INTO aerolinea.TrTELEFONO (ncodpasajero,ntelefono)values(" + icodigoPasajero + "," + txtTelefonoPasajero1.Text + ");";
-                        MySqlCommand cmd3 = new MySqlCommand(sinsertartelefono1, clasconexion.funobtenerConexion());
-                        MySqlDataReader MyReader3;
-                        MyReader3 = cmd3.ExecuteReader();
-                    }
+                     
+                        
+                          for (int itelefono=0; itelefono < icontadorTelefonosPasajeros; itelefono++) {
+                           string sinsertartelefono1 = "INSERT INTO AEROLINEA.TrTELEFONO (ncodpasajero,ntelefono)values(" + icodigoPasajero + "," + stelefono[itelefono] +  ");";
+                            MySqlCommand cmd3 = new MySqlCommand(sinsertartelefono1, clasconexion.funobtenerConexion());
+                            cmd3.ExecuteNonQuery();
+                            //INGRESO BITACORA PROGRAMADOR Y ANALISTA GERADO SANTIZO
+                            claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario, "Ingreso Telefono Extra", "trTelefono");
+                              //FIN iNGRESO bITACORA
+                        }
 
-                    if (!string.IsNullOrWhiteSpace(txtTelefonoPasajero2.Text))
-                    {
-                        string sinsertartelefono2 = "INSERT INTO aerolinea.TrTELEFONO (ncodpasajero,ntelefono)values(" + icodigoPasajero + "," + txtTelefonoPasajero2.Text + ");";
-                        MySqlCommand cmd4 = new MySqlCommand(sinsertartelefono2, clasconexion.funobtenerConexion());
-                        MySqlDataReader MyReader4;
-                        MyReader4 = cmd4.ExecuteReader();
-                    }
-                    if (!string.IsNullOrWhiteSpace(txtCorreoPasajero1.Text))
-                    {
-                        string sinsertarcorreo1 = "INSERT INTO aerolinea.TrCORREO (ncodpasajero,vcorreo)values(" + icodigoPasajero + ",'" + txtCorreoPasajero1.Text + "');";
-                        MySqlCommand cmd5 = new MySqlCommand(sinsertarcorreo1, clasconexion.funobtenerConexion());
-                        MySqlDataReader MyReader5;
-                        MyReader5 = cmd5.ExecuteReader();
-                    
-                    }
+                          for (int icorreo = 0; icorreo < icontadorCorreosPasajeros; icorreo++) {
+                              string sinsertarcorreo1 = "INSERT INTO AEROLINEA.TrCORREO (ncodpasajero,vcorreo)values(" + icodigoPasajero + ",'" + scorreo[icorreo] + "');";
+                              MySqlCommand cmd5 = new MySqlCommand(sinsertarcorreo1, clasconexion.funobtenerConexion());
+                              cmd5.ExecuteNonQuery();
+                               //INGRESO BITACORA PROGRAMADOR Y ANALISTA GERADO SANTIZO
+                                claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario, "Ingreso Correo Extra", "TrCorreo");
+                               //FIN iNGRESO bITACORA
+                          
+                          }
 
-                    if (!string.IsNullOrWhiteSpace(txtCorreoPasajero2.Text))
-                    {
-                        string sinsertarcorreo2 = "INSERT INTO aerolinea.TrCORREO (ncodpasajero,vcorreo)values(" + icodigoPasajero + ",'" + txtCorreoPasajero2.Text + "');";
-                        MySqlCommand cmd6 = new MySqlCommand(sinsertarcorreo2, clasconexion.funobtenerConexion());
-                        MySqlDataReader MyReader6;
-                        MyReader6 = cmd6.ExecuteReader();
-                    }
+
+                              
+
+                   
                     
                     clasconexion.funobtenerConexion().Close();
                     funlimpiar();
@@ -166,13 +157,13 @@ namespace Aerolinea
         {
             txtNomPasajero.Text = "";
             txtApellidoPasajero.Text = "";
-            txtCorreoPasajero1.Text = "";
-            txtCorreoPasajero2.Text = "";
+            txtCorreoPasajero.Text = "";
+         //   txtCorreoPasajero2.Text = "";
             txtDireccionPasajero.Text = "";
             txtEdadPasajero.Text = "";
             txtnoPasaporte.Text = "";
-            txtTelefonoPasajero1.Text = "";
-            txtTelefonoPasajero2.Text = "";
+            txtTelefonoPasajero.Text = "";
+         //   txtTelefonoPasajero2.Text = "";
             txtdpiPasajero.Text = "";
             
 
@@ -191,13 +182,17 @@ namespace Aerolinea
             using (clasconexion.funobtenerConexion())
             {
 
-                string squeryBuscarPasajero = "SELECT ncodpasajero as CodigoPasajero,vnompasajero as NombrePasajero,vapepasajero as ApellidoPasajero,vdireccion as DireccionPasajero,nedadpasajero as Edad,vdpi as DPI,dfechanacimiento  as FechaNacimiento,vnopasaporte as PasaportePasajero,vestado as EstadoPasajero FROM aerolinea.MaPASAJERO  where vnopasaporte='" + txtBusquedaPasajero.Text + "' or ncodpasajero=" + txtBusquedaPasajero.Text;
+                string squeryBuscarPasajero = "SELECT ncodpasajero as CodigoPasajero,vnompasajero as NombrePasajero,vapepasajero as ApellidoPasajero,vdireccion as DireccionPasajero,nedadpasajero as Edad,vdpi as DPI,dfechanacimiento  as FechaNacimiento,vnopasaporte as PasaportePasajero,vestado as EstadoPasajero FROM AEROLINEA.MaPASAJERO  where vnopasaporte='" + txtBusquedaPasajero.Text + "' or ncodpasajero=" + txtBusquedaPasajero.Text;
                 MySqlCommand cmdc = new MySqlCommand(squeryBuscarPasajero, clasconexion.funobtenerConexion());
                 DataTable dtDat = new DataTable();
                 MySqlDataAdapter mdaDat = new MySqlDataAdapter(squeryBuscarPasajero, clasconexion.funobtenerConexion());
                 mdaDat.Fill(dtDat);
                 grdPasajeros.DataSource = dtDat;
+                //INGRESO BITACORA PROGRAMADOR Y ANALISTA GERADO SANTIZO
+                claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario, "Busco Pasjero", "MaPasajero");
+                //FIN iNGRESO bITACORA
                 clasconexion.funobtenerConexion().Close();
+
 
 
             }
@@ -216,9 +211,12 @@ namespace Aerolinea
                 try { 
                 string sfechaNacimiento = dtpasajero.Value.ToShortDateString();
                 //MessageBox.Show(sfechaNacimiento);
-                string seliminarPasajero = "UPDATE aerolinea.MaPASAJERO  set vestado = 'INACTIVO' where ncodpasajero=" + cmbeliminarPasajero.Text ;
+                string seliminarPasajero = "UPDATE AEROLINEA.MaPASAJERO  set vestado = 'INACTIVO' where ncodpasajero=" + cmbeliminarPasajero.Text ;
                 MySqlCommand cmd2 = new MySqlCommand(seliminarPasajero, clasconexion.funobtenerConexion());
                 cmd2.ExecuteNonQuery();
+                //INGRESO BITACORA PROGRAMADOR Y ANALISTA GERADO SANTIZO
+                claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario, "Elimino Pasajero", "MaPasajero");
+                //FIN iNGRESO bITACORA
                 clasconexion.funobtenerConexion().Close();
                
                 funconsultarPasajeros();
@@ -229,7 +227,7 @@ namespace Aerolinea
                 }
             }
             
-                
+            
         }
 
         private void mENUToolStripMenuItem_Click(object sender, EventArgs e)
@@ -248,87 +246,98 @@ namespace Aerolinea
            
         }
 
-        private void funbuscarPasajeroAModificar()
-        {
-            using (clasconexion.funobtenerConexion())
-            {
-                string squery = "SELECT ncodpasajero as CodigoPasajero,vnompasajero as NombrePasajero,vapepasajero as ApellidoPasajero,vdireccion as DireccionPasajero,nedadpasajero as EdadPasajero,vdpi as DPI, DATE_FORMAT(dfechanacimiento, '%Y-%m-%d') as FechaNacimiento, vnopasaporte as PasaportePasajero,vestado as EstadoPasajero FROM aerolinea.MaPASAJERO  where ncodpasajero=" + lstmodificoPasajero.SelectedItem.ToString();
-                MySqlCommand cmdc = new MySqlCommand(squery, clasconexion.funobtenerConexion());
-                DataTable dtdatosPasajero = new DataTable();
-                MySqlDataAdapter mdadatosPasajero = new MySqlDataAdapter(squery, clasconexion.funobtenerConexion());
-                mdadatosPasajero.Fill(dtdatosPasajero);
-                grdPasajeros.DataSource = dtdatosPasajero;
-                clasconexion.funobtenerConexion().Close();
-            }
-
-
-            
-        }
+        
 
         private void btnModificarPasajero_Click(object sender, EventArgs e)
         {
-            funmodificarPasajero();
-            //label14.Visible = false;
-            //cmbestadoPasajero.Visible = false;
+          
+            frmmodificarPasajero frmod = new frmmodificarPasajero();
+            frmod.Show();
+         
         }
 
-        private void funmodificarPasajero()
-        {
-           
-                using (clasconexion.funobtenerConexion())
-                {
-                    try
-                    {
-                        MySqlCommand cmd = clasconexion.funobtenerConexion().CreateCommand();
-                        cmd.CommandText = "UPDATE aerolinea.MaPASAJERO  set vnompasajero = @nompasajero,vapepasajero = @apepasajero,vdireccion = @dirpasajero,nedadpasajero = @edadpasajero,vdpi = @dpipasajero,dfechanacimiento = @fechapasajero,vnopasaporte = @paspasajero,vestado = @estadopasajero where ncodpasajero=" + lstmodificoPasajero.SelectedItem.ToString();
-                        cmd.Parameters.Add("@nompasajero", MySqlDbType.VarChar);  cmd.Parameters.Add("@apepasajero", MySqlDbType.VarChar);
-                        cmd.Parameters.Add("@dirpasajero", MySqlDbType.VarChar);  cmd.Parameters.Add("@edadpasajero", MySqlDbType.Decimal);
-                        cmd.Parameters.Add("@dpipasajero", MySqlDbType.VarChar);  cmd.Parameters.Add("@fechapasajero", MySqlDbType.Date);
-                        cmd.Parameters.Add("@paspasajero", MySqlDbType.VarChar);  cmd.Parameters.Add("@estadopasajero", MySqlDbType.VarChar);
-                                            
+        
 
-                        for (int i = 0; i < this.grdPasajeros.Rows.Count - 1; i++)
-                        {
+       
 
-                            cmd.Parameters["@nompasajero"].Value = this.grdPasajeros[1, i].Value;
-                            cmd.Parameters["@apepasajero"].Value = this.grdPasajeros[2, i].Value;
-                            cmd.Parameters["@dirpasajero"].Value = this.grdPasajeros[3, i].Value;
-                            cmd.Parameters["@edadpasajero"].Value = this.grdPasajeros[4, i].Value;
-                            cmd.Parameters["@dpipasajero"].Value = this.grdPasajeros[5, i].Value;
-                            cmd.Parameters["@fechapasajero"].Value = this.grdPasajeros[6, i].Value;
-                            cmd.Parameters["@paspasajero"].Value = this.grdPasajeros[7, i].Value;
-                            cmd.Parameters["@estadopasajero"].Value = this.grdPasajeros[8, i].Value;
-                           
-                            cmd.ExecuteNonQuery();
-                        }      
-
-                        clasconexion.funobtenerConexion().Close();
-
-                        funconsultarPasajeros();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            
-        }
-
-        private void cmbmodificarPasajero_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void lstmodificoPasajero_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            funbuscarPasajeroAModificar();
-            //label14.Visible = true;
-            //cmbestadoPasajero.Visible = true;
-        }
-
+        
         private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
+
+        private void btnrefrescarBd_Click(object sender, EventArgs e)
+        {
+            funrefrescarDatosBD();
+        }
+
+        private void funrefrescarDatosBD()
+        {
+            funllenarComboEliminarPasajero();
+            funconsultarPasajeros();
+            funllenarComboAdicionalesPasajero();
+        }
+
+        private int icontadorTelefonosPasajeros=0;
+        private int[] stelefono = new int[50];
+        private int icontadorCorreosPasajeros = 0;
+        private string[] scorreo = new string[50];
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            
+            
+           
+            lstTelefonoPasajero.Items.Add(txtTelefonoPasajero.Text);
+            stelefono[icontadorTelefonosPasajeros] = Convert.ToInt32(txtTelefonoPasajero.Text);                
+            icontadorTelefonosPasajeros++;
+            txtTelefonoPasajero.Text = "";
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lstCorreoPasajero.Items.Add(txtCorreoPasajero.Text);
+            scorreo[icontadorCorreosPasajeros] = txtCorreoPasajero.Text.ToString();
+            icontadorCorreosPasajeros++;
+            txtCorreoPasajero.Text = "";
+        }
+
+
+        private void funbuscarAdicionalesPasajero()
+        {
+            using (clasconexion.funobtenerConexion())
+            {
+
+                string squeryBuscarPasajero = "SELECT ncodpasajero as CodigoPasajero,ntelefono as TelefonoPasajero FROM AEROLINEA.TrTELEFONO  where ncodpasajero=" + cmbcodPasajero.Text;
+                MySqlCommand cmdc = new MySqlCommand(squeryBuscarPasajero, clasconexion.funobtenerConexion());
+                DataTable dtDat = new DataTable();
+                MySqlDataAdapter mdaDat = new MySqlDataAdapter(squeryBuscarPasajero, clasconexion.funobtenerConexion());
+                mdaDat.Fill(dtDat);
+                grdtelefonoPasajero.DataSource = dtDat;
+                string squeryBuscarCorreos = "SELECT ncodpasajero as CodigoPasajero,vcorreo as CorreoPasajero FROM AEROLINEA.TrCORREO where ncodpasajero=" + cmbcodPasajero.Text;
+                MySqlCommand cmndco = new MySqlCommand(squeryBuscarCorreos, clasconexion.funobtenerConexion());
+                DataTable dtDatCorreo = new DataTable();
+                MySqlDataAdapter mDatCorreo = new MySqlDataAdapter(squeryBuscarCorreos, clasconexion.funobtenerConexion());
+                mDatCorreo.Fill(dtDatCorreo);
+                grdcorreoPasajero.DataSource = dtDatCorreo;
+                clasconexion.funobtenerConexion().Close();
+
+
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbcodPasajero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            funbuscarAdicionalesPasajero();
+        }
+
+       
     }
 }

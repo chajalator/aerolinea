@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySql.Data;
+//PROGRAMADOR Y ANALISTA: Gerardo Santizo
+//Fecha Inicio: 14/Agosto/2015      Fecha Fin: 18/Agosto/2015
 
 namespace Aerolinea
 {
@@ -21,7 +23,7 @@ namespace Aerolinea
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
+        
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,7 +43,6 @@ namespace Aerolinea
             funllenarComboEliminarUsuario();
             //funbuscarUsuario();
         }
-
     private void btnGuardarUsuario_Click(object sender, EventArgs e)
         {
             try
@@ -63,11 +64,14 @@ namespace Aerolinea
                     MySqlDataReader MyReader;
                     MyReader = cmd2.ExecuteReader();
                     MessageBox.Show("USUARIO REGISTRADO");
+                    //INGRESO BITACORA 
+                    claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario, "Ingreso Usuario", "MaUsuario");
+                    //FIN iNGRESO bITACORA
                     clasconexion.funobtenerConexion().Close();
+                    
                     funlimpiar();
                     //funconsultarUsuario();
                 }
-
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -80,7 +84,6 @@ namespace Aerolinea
             txtUser.Text = "";
             txtPassword.Text = "";
         }
-
         private void dataGridViewUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -124,8 +127,10 @@ namespace Aerolinea
                 MySqlDataAdapter mdaDat = new MySqlDataAdapter(squeryBuscarUsuario, clasconexion.funobtenerConexion());
                 mdaDat.Fill(dtDat);
                 grdUsuarios.DataSource = dtDat;
+                //INGRESO A BITACORA
+                claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario, "Busco Usuario", "MaUsuario");
+                //FIN INGRESO BITACORA
                 clasconexion.funobtenerConexion().Close();
-
 
             }
         }
@@ -155,6 +160,9 @@ namespace Aerolinea
                     string seliminarUsuario = "UPDATE AEROLINEA.MaUSUARIO set vestado = 'INACTIVO' where ncodusuario = '" + cmbeliminarUsuario.SelectedValue + "'"; 
                     MySqlCommand cmd2 = new MySqlCommand(seliminarUsuario, clasconexion.funobtenerConexion());
                     cmd2.ExecuteNonQuery();
+                    //INGRESO BITACORA
+                    claseUsuario.funobtenerBitacora(claseUsuario.varibaleUsuario, "Elimino Usuario", "MaUsuario");
+                    //FIN INGRESO BITACORA
                     clasconexion.funobtenerConexion().Close();
                     funconsultarUsuario();
                 }
@@ -192,7 +200,6 @@ namespace Aerolinea
             frmmodificarUsuario modificar = new frmmodificarUsuario();
             modificar.Show();
         }
-
         private void rEFRESCARToolStripMenuItem_Click(object sender, EventArgs e)
         {
             funconsultarUsuario();

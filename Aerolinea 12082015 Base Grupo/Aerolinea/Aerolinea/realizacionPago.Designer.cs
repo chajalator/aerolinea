@@ -1,6 +1,6 @@
 ﻿namespace Aerolinea
 {
-    partial class frmrealizacionPago
+    partial class realizacionPago
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmrealizacionPago));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(realizacionPago));
             this.txtTarjeta = new System.Windows.Forms.TextBox();
             this.txtMontoEf = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -36,18 +36,15 @@
             this.cmbTipoPago = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.grdReservacion = new System.Windows.Forms.DataGridView();
+            this.txtNoReservacion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtCodCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPagar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.cmbCodCliente = new System.Windows.Forms.ComboBox();
-            this.cmbNoReservacion = new System.Windows.Forms.ComboBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.rEGRESARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdReservacion)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTarjeta
@@ -110,6 +107,13 @@
             this.grdReservacion.Size = new System.Drawing.Size(467, 146);
             this.grdReservacion.TabIndex = 20;
             // 
+            // txtNoReservacion
+            // 
+            this.txtNoReservacion.Location = new System.Drawing.Point(256, 142);
+            this.txtNoReservacion.Name = "txtNoReservacion";
+            this.txtNoReservacion.Size = new System.Drawing.Size(100, 20);
+            this.txtNoReservacion.TabIndex = 18;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -119,6 +123,13 @@
             this.label3.Size = new System.Drawing.Size(166, 19);
             this.label3.TabIndex = 17;
             this.label3.Text = "Ingrese No. Reservacion";
+            // 
+            // txtCodCliente
+            // 
+            this.txtCodCliente.Location = new System.Drawing.Point(256, 92);
+            this.txtCodCliente.Name = "txtCodCliente";
+            this.txtCodCliente.Size = new System.Drawing.Size(100, 20);
+            this.txtCodCliente.TabIndex = 16;
             // 
             // label2
             // 
@@ -136,7 +147,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(189, 45);
+            this.label1.Location = new System.Drawing.Point(188, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(305, 23);
             this.label1.TabIndex = 14;
@@ -146,7 +157,7 @@
             // btnPagar
             // 
             this.btnPagar.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnPagar.Image = ((System.Drawing.Image)(resources.GetObject("btnPagar.Image")));
+            this.btnPagar.Image = global::Aerolinea.Properties.Resources.pagos1;
             this.btnPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPagar.Location = new System.Drawing.Point(528, 369);
             this.btnPagar.MaximumSize = new System.Drawing.Size(110, 50);
@@ -156,7 +167,6 @@
             this.btnPagar.Text = "Pagar";
             this.btnPagar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPagar.UseVisualStyleBackColor = true;
-            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
             // btnConsultar
             // 
@@ -172,60 +182,27 @@
             this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConsultar.UseVisualStyleBackColor = true;
             // 
-            // cmbCodCliente
+            // btnMenu
             // 
-            this.cmbCodCliente.FormattingEnabled = true;
-            this.cmbCodCliente.Location = new System.Drawing.Point(219, 93);
-            this.cmbCodCliente.Name = "cmbCodCliente";
-            this.cmbCodCliente.Size = new System.Drawing.Size(158, 21);
-            this.cmbCodCliente.TabIndex = 30;
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenu.Location = new System.Drawing.Point(6, 12);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(110, 50);
+            this.btnMenu.TabIndex = 28;
+            this.btnMenu.Text = "Menu";
+            this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // cmbNoReservacion
-            // 
-            this.cmbNoReservacion.FormattingEnabled = true;
-            this.cmbNoReservacion.Location = new System.Drawing.Point(221, 139);
-            this.cmbNoReservacion.Name = "cmbNoReservacion";
-            this.cmbNoReservacion.Size = new System.Drawing.Size(156, 21);
-            this.cmbNoReservacion.TabIndex = 31;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rEGRESARToolStripMenuItem,
-            this.sALIRToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(651, 27);
-            this.menuStrip1.TabIndex = 172;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // rEGRESARToolStripMenuItem
-            // 
-            this.rEGRESARToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("rEGRESARToolStripMenuItem.Image")));
-            this.rEGRESARToolStripMenuItem.Name = "rEGRESARToolStripMenuItem";
-            this.rEGRESARToolStripMenuItem.Size = new System.Drawing.Size(106, 23);
-            this.rEGRESARToolStripMenuItem.Text = "REGRESAR";
-            // 
-            // sALIRToolStripMenuItem
-            // 
-            this.sALIRToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.sALIRToolStripMenuItem.Image = global::Aerolinea.Properties.Resources.salir;
-            this.sALIRToolStripMenuItem.Name = "sALIRToolStripMenuItem";
-            this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(73, 23);
-            this.sALIRToolStripMenuItem.Text = "SALIR";
-            this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
-            // 
-            // frmrealizacionPago
+            // realizacionPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(651, 447);
-            this.ControlBox = false;
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.cmbNoReservacion);
-            this.Controls.Add(this.cmbCodCliente);
+            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.txtTarjeta);
             this.Controls.Add(this.txtMontoEf);
@@ -235,18 +212,18 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.grdReservacion);
             this.Controls.Add(this.btnConsultar);
+            this.Controls.Add(this.txtNoReservacion);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtCodCliente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(667, 486);
             this.MinimumSize = new System.Drawing.Size(667, 486);
-            this.Name = "frmrealizacionPago";
+            this.Name = "realizacionPago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Realización Pago";
             ((System.ComponentModel.ISupportInitialize)(this.grdReservacion)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,13 +240,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView grdReservacion;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.TextBox txtNoReservacion;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCodCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbCodCliente;
-        private System.Windows.Forms.ComboBox cmbNoReservacion;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem rEGRESARToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
+        private System.Windows.Forms.Button btnMenu;
     }
 }
